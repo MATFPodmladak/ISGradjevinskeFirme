@@ -1,0 +1,5 @@
+I Lokacija
+	~ Istrazivanje lokacije  - Menadzer proverava uslove za izgradnju objekta
+	~ Okvirno planiranje - Neko treba da proceni cenu izgradnje objekta, gradjevinske matreijale,
+		analiza rizika, finansisko i prostorno planiranje
+	~ Predlog plana - Projektant na osnovu okvirnog planiranja iznosi predlog plana 
