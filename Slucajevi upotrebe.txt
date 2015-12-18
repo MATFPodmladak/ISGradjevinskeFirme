@@ -1,5 +1,9 @@
 I Lokacija
 	~ Istrazivanje lokacije  - Menadzer proverava uslove za izgradnju objekta
 	~ Okvirno planiranje - Neko treba da proceni cenu izgradnje objekta, gradjevinske matreijale,
-		analiza rizika, finansisko i prostorno planiranje
+		analiza rizika, finansijsko i prostorno planiranje
 	~ Predlog plana - Projektant na osnovu okvirnog planiranja iznosi predlog plana 
+	~ Odobravane plana - Upravni odbor prihvata ili odbija plana (izmena, ili totalno odbacivanje)
+	~ Obezbedjiavnje finansija -Vlasnik firme (ili odbor), na osnovu finansijskog plana bira kako će da se projekat finansira:
+		Tender za potencijalnog finansijera, već unapred poznat finansijer, sopstveni kapital, kredit iz banke
+	
