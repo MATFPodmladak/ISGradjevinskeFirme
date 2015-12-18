@@ -1,0 +1,17 @@
+I Nalazenje lokacije
+	1. Istrazivanje trzista
+	2. Preliminarne lokacije
+	3. Analiza rizika
+	4. Finansisko i prostorno planiranje
+	5. Predlog plana
+	6. Opstinska administracija
+	
+II Nabavka materijala i opreme
+	1. Sirov materijal
+	2. Obradjen materijal
+	3. Masine
+	4. Oprema
+
+III Ljudi
+	1. Radni profil
+	2. Radne grupe
