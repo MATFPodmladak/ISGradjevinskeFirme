@@ -1,0 +1,26 @@
+{ u zagradi su predlozii napomene u vezi nekih detalja }
+{ VAŽNO: ideje i ispravke su dobrodošle :) }
+--- Prodaja i marketing ---
+- Prodaja unapred (na rate, lizing, kredit, ovde sve uključujemo)
+	- Učesnici: menadžer(upravnik) u prodaji, klijent(kupac), posrednik (banka)
+- Standardna prodaja
+	- Učesnici: menadžer(upravnik) u prodaji, klijent(kupac), posrednik (banka)
+- Beneficirana prodaja (za posebne kategorije stanovnika)
+	- Učesnici: menadžer(upravnik) u prodaji, klijent(kupac), posrednik (banka), (predstavnik nadležne ustanove koji potvrđuje status kupca)
+- Namenska prodaja (ako prostor ima svoju specificiranu namenu)
+	- Učesnici: menadžer(upravnik) u prodaji, klijent(i)(kupac), posrednik (banka), nadležno lice iz javnog sektora
+- Prodaja uz pravo reorganizovanja prostora (neko kupi dva stana, hoće da ih spoji, npr)
+	- menadžer(upravnik) u prodaji, klijent(kupac), posrednik (banka), inženjer (stručno lice iz kompanije koje ocenjuje izvodljivost zahteva)
+
+- Marketing u masovnim medijima (televizija, dnevna štampa, mesečna štampa, specijalizovane internet stranice, itd)
+	- Učesnici: Menadžer za marketing, Menadžer medija
+- Marketing na društvenim mrežama (fb, tw, ig, in...)
+	- Učesnici: Menadžer za marketing, održavaoci naloga na mrežama
+- Promocije na manifestacijama od značaja (sajmovi, redionice, itd)
+	- Učesnici: Menadžer za marketing, promoteri
+- Promocije i prezentacije zainteresovanim licima (lično)
+	- Učesnici: Menadžer za marketing, Promoteri, Zainteresovana lica
+- Angažovanje javne ličnosti za promociju
+	- Menadžer za marketing, javna ličnost
+- Promocija kroz društveno angažovanu aktivnost
+	- Učesnici: Menadžer za marketing, promoteri (neretko zaposleni u firmi)...
