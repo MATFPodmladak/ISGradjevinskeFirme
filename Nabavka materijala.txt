@@ -31,3 +31,10 @@
 --Kupovina robe i isplacivanje
 	-Samo ime kaze
 	Ucesnici: Menazdment
+
+Revizija Saša:
+
+Prva dva slucaja upotrebe pripadaju mom delu, Tok izgradnje, tako da ih treba tamo premestiti.
+
+Ove ostale treba samo reorganizovati u duhu izbacena prva dva. Isporuka mislim da nije adekvatan deo sistema iz razloga što onaj od koga mi kupujemo materijal nije
+deo našeg sistema u smislu da mi pratimo njegovo poslovanje. Isporuka i dostavka tj prihvatanje robe bih spojio.
