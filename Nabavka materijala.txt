@@ -1,0 +1,33 @@
+--Potrosnja
+	-Potrosnja materijala vec dostupnih u skladistu firme.
+	Ucesnici: Skladiste, menadzment
+	
+--Porudzbina
+	-Umesto ili paralelno sa potrosnjom, ako nema uopste ili nema dovoljno materijala u skladistu.
+	Ucesnici: Menadzment
+	
+--Izbor dobavljaca
+	-Nakon porudzbine, vrsi se odabir dobavljaca, na osnovu cene, kvaliteta, roka isporuke i ranijih iskustava.
+	-Na duze staze, cuvaju se informacije o dobavljacima radi brzeg odabira sledeci put.
+	Ucesnici: Menadzment
+	
+--Predavanje naloga
+-Dobavljac dobija nalog
+	Ucesnici: Menadzment, Dobljavac
+	
+--Ispunjavanje naloga
+	-Dobavljac ispunjava zahteve naloga nabavke u predvidjenom roku.
+	Ucesnici: Dobavljac
+	
+--Isporuka
+	-Transport (za njega je zaduzen dobavljac) isporucuje robu. Paralelno, sa robom se salje
+	Ucesnici: Dobavljac, transport
+	
+	
+--Prihvatanje robe
+	-Inspekcija robe: kvalitet, kvantitet...
+	Ucesnici: Skladiste, analiticar
+	
+--Kupovina robe i isplacivanje
+	-Samo ime kaze
+	Ucesnici: Menazdment
