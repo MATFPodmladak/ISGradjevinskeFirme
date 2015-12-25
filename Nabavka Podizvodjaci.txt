@@ -1,7 +1,23 @@
-~ Odabir potencijalnih podizvođača - Na osnovu već poznate radne snage koju kompanija poseduje, vrši se odabir potencijalnih
+﻿~ Odabir potencijalnih podizvođača - Na osnovu već poznate radne snage koju kompanija poseduje, vrši se odabir potencijalnih
 	podizvođača za sve vrste poslova za koje kompanija nema ljude.
 ~ Kontakt potencijalnih podizvođača - Direktor firme kontaktira odabrane potencijalne podizvođače i zapisuje njihove ponude.
 	Tako dobijene ponude, kompanija uvećava za svoju planiranu zaradu i uključuje u svoju ukupnu cenu koja se šalje investitoru.
 ~ Potražnja najpovoljnijih podizvođača - Nakon što je ugovor sa investitorom sklopljen, kompanija još jednom traži potencijalne podizvođače
 	ne bi li našla povoljniju ponudu.
 ~ Direktni pregovori sa podizvođačem - I u ovoj fazi direktor pokušava da snizi cenu i na kraju sklapa ugovor ukoliko je zadovoljan uslovima.
+
+
+
+Recenzija Saša:
+
+Cenkanje(4ti slučaj upotrebe) ne bi trebalo da bude deo sistema pošto je to usmeni/verbalni deo. Direktor može da ima spisak ponuda potencijalnih radnika
+i da na osnovu njih vrši odabir ali njihov konkretan razgovor ne treba da bude deo sistema. 
+Konkretno moja misao se svodi na to da radnik koj još nije zaposlen ne može učestvovati u komunikaciji kroz sam sistem.
+
+Prvi slučaj upotrebe . Dakle oni kao firma imaju partnere(Ako se sećate mog primera Žike vodoinsalatera) i ona njih prve zapošljava jer sa njima imaju siguran odnos 
+cene i kvaliteta. Onda se popunjavaju slobodna mesta u okviru drugog slučaja upotrebe.
+
+Kontakt svih potencijalnih radnika bi trebao da bude nakon prva dva S.U. sa povratkom na njih u slučaju da njihovi partneri već rade na nekom projektu ili ovi novi
+nisu zadovoljni inicijalnom ponudom.
+
+Novac za radnike bi trebao da je obezbeđen unapred tako da treći S.U. nema smisla ubacivati.
