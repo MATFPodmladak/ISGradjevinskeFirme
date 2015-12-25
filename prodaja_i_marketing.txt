@@ -1,4 +1,4 @@
-{ u zagradi su predlozii napomene u vezi nekih detalja }
+﻿{ u zagradi su predlozii napomene u vezi nekih detalja }
 { VAŽNO: ideje i ispravke su dobrodošle :) }
 --- Prodaja i marketing ---
 - Prodaja unapred (na rate, lizing, kredit, ovde sve uključujemo)
@@ -24,3 +24,29 @@
 	- Menadžer za marketing, javna ličnost
 - Promocija kroz društveno angažovanu aktivnost
 	- Učesnici: Menadžer za marketing, promoteri (neretko zaposleni u firmi)...
+
+
+
+Recenzija Saša:
+
+Beneficirana prodaja - Nisam siguran da li postoji tako nešto sem ako ne uzimaš u obzir prodaju preko veze što sigurno
+ne bi trebalo da bude deo sistema. XD
+Tako da ovo isto mislim da treba da se izbaci.
+
+5ti slučaj upotrebe "Prodaja uz pravo reorganizovanja prostora", staviti kao alternativni slučaj u pradaji unapred, mislim 
+da nije vredno da bude zasebno.
+
+Namenska prodaja je meni malo klimava jer postoji plan objekta, šta je gde, tako da šta god da se pravi to se i prodaje,
+a to što se prodaje spada u standardnu prodaju i prodaju unapred. Ako bi neko hteo da umesto stana mu naprave uslove za 
+tipa frizerski salon to je opet deo alternativnog slučaja.
+
+Markteting u masovnim medijima i na društvenim mrežama treba da budu jedan slučaj upotrebe jer ne želimo da zalazimo
+u detalje kako koj će funkcionisati. Pogledajte primer za dijagram klase.
+
+Promocija na manifestacijama se obično održavaju za zainteresovane ljude tako da bi
+"Promocije na manifestacijama od značaja" i "Promocije i prezentacije zainteresovanim licima" trebalo spojiti.
+
+
+Poslednja dva su overkill, ja sam za to da se brišu.
+
+
