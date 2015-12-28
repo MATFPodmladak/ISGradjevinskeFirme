@@ -1,0 +1,15 @@
+- provera stanja masina
+    opis:     proverava se koje su masine potrebne i dostupne za rad, ukoliko neka nije, sastavlja se spisak za narucivanje od dobavljaca
+    ucesnici: menadzment
+- odabir dobavljaca
+    opis:     odlucuje se da li se kupuje polovna ili nova masina; ispituju se cene masina na trzistu, njihov kvalitet i njihovo stanje
+    ucesnici: menadzment, dobavljac
+- kreiranje porudzbenice
+    opis:     sastavlja se narucbenica na osnovu spiska i dostavlja se dobavljacu
+    ucesnici: menadzment, dobavljac
+- prijem masina
+    opis:     dobavljac dostavlja kupljene masine
+    ucesnici: menadzment, dobavljac
+- kupovina masina
+    opis:     isplacuje se novac dobavljacu ukoliko su masine u ugovorenom stanju i sve na broju
+    ucesnici: menadzment, dobavljac
