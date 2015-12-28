@@ -5,45 +5,17 @@
 - Uobičajena prodaja
 	- Učesnici: menadžer(upravnik) u prodaji, klijent(kupac), posrednik (banka)
 
-- Beneficirana prodaja (u smislu promocije)
-	- Učesnici: menadžer(upravnik) u prodaji, klijent(kupac), posrednik (banka), (predstavnik nadležne ustanove koji potvrđuje status kupca)
-
 - Marketing u masovnim medijima i društvenim mrežama(televizija, dnevna, mesečna štampa, specijalizovane internet stranice, fb, tw, ig, in...)
 	- Učesnici: Menadžer za marketing, Menadžer medija, održavaoci naloga na mrežama 
 - Promocije na manifestacijama od značaja (sajmovi, redionice, prezentacije zainteresovanim licima itd)
 	- Učesnici: Menadžer za marketing, promoteri, Zainteresovana lica
 
 { Neki predlozi u alternativnim tokovima }
-
-- Angažovanje javne ličnosti za promociju
-	- Menadžer za marketing, javna ličnost
 - Promocija kroz društveno angažovanu aktivnost
 	- Učesnici: Menadžer za marketing, promoteri (neretko zaposleni u firmi)...
 - Namenska prodaja (ako prostor ima svoju specificiranu namenu)
 	- Učesnici: menadžer(upravnik) u prodaji, klijent(i)(kupac), posrednik (banka), nadležno lice iz javnog sektora
 - Prodaja uz pravo reorganizovanja prostora (neko kupi dva stana, hoće da ih spoji, npr)
 	- menadžer(upravnik) u prodaji, klijent(kupac), posrednik (banka), inženjer (stručno lice iz kompanije koje ocenjuje izvodljivost zahteva)
-
-Recenzija Saša:
-
-Beneficirana prodaja - Nisam siguran da li postoji tako nešto sem ako ne uzimaš u obzir prodaju preko veze što sigurno
-ne bi trebalo da bude deo sistema. XD
-Tako da ovo isto mislim da treba da se izbaci.
-
-5ti slučaj upotrebe "Prodaja uz pravo reorganizovanja prostora", staviti kao alternativni slučaj u pradaji unapred, mislim 
-da nije vredno da bude zasebno.
-
-Namenska prodaja je meni malo klimava jer postoji plan objekta, šta je gde, tako da šta god da se pravi to se i prodaje,
-a to što se prodaje spada u standardnu prodaju i prodaju unapred. Ako bi neko hteo da umesto stana mu naprave uslove za 
-tipa frizerski salon to je opet deo alternativnog slučaja.
-
-Markteting u masovnim medijima i na društvenim mrežama treba da budu jedan slučaj upotrebe jer ne želimo da zalazimo
-u detalje kako koj će funkcionisati. Pogledajte primer za dijagram klase.
-
-Promocija na manifestacijama se obično održavaju za zainteresovane ljude tako da bi
-"Promocije na manifestacijama od značaja" i "Promocije i prezentacije zainteresovanim licima" trebalo spojiti.
-
-
-Poslednja dva su overkill, ja sam za to da se brišu.
 
 
