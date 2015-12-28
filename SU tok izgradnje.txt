@@ -1,0 +1,43 @@
+I Priprema za rad
+
+Opis: Tok izgradnje nekog objekta, prati se plan radova i kroz gradnju se modifikuju ciljevi.
+
+Učesnici: Projektant
+
+Preduslovi: Mora da postoji plan izgradnje, lokacija, materijali i ljudstvo
+Postuslovi: Objekat mora biti izgrađen.
+
+Glavni tok:
+1. Projektant proverava plan radova i plan ciljeva.
+2. Pravi nedeljni plan ciljeva i organizuje rad. 
+3. Plan šalje svim šefovima timova.
+
+
+II Nedeljni izveštaj
+Opis: Svaki šef tima piše izveštaj šta je postignuto i na kraju nedelje prosleđuje projektantu.
+
+Preduslov: Mora da postoji nedeljni plan ciljeva
+Postuslovi: Mora da pošalje nedeljni izveštaj
+
+Učesnici: Šef(ovi) tima.
+
+Glavni tok
+1. Šef tima dobija nedelji plan ciljeva
+2. Određuje tok radova za tu nedelju
+3. Svim radnicima svog tima zadaje obaveze,
+4. Na kraju nedelje piše koliko je postignuto od nedeljnog plana.
+
+
+III Modifikacija plana ciljeva
+Opis: Projektant na osnovu izveštaja menja plan ciljeva.
+
+Učesnici: Projektant
+
+Preduslovi: Šefovi timova su dostavili izveštaje
+Postuslovi: Plan ciljeva je modifikovan
+
+Glavni tok:
+1. Projektant proverava izveštaje
+2. U odnosu na učinak timova menja plan rada za sledeću nedelju.
+3. U odnosu na učinak smanjuje tj povećava broj radnika u timu efikasnim/neefikasnim timovima.
+4. Obaveštava direktora na učinak
