@@ -1,21 +1,79 @@
 ﻿--- Prodaja i marketing ---
 
-- Prodaja unapred (na rate, lizing, kredit, ovde sve uključujemo)
-	- Učesnici: menadžer(upravnik) u prodaji, klijent(kupac), posrednik (banka)
-- Uobičajena prodaja
-	- Učesnici: menadžer(upravnik) u prodaji, klijent(kupac), posrednik (banka)
+- Prodaja (uobičajena i unapred)
+	- Opis: Upravnik u prodaji obavlja prodaju prostora koji je obuhvaćen planom izgradnje Kupcu i obavlja se neka vrsta plaćanja, 
+			na rate, kreditom lizingom gotovinom i slično.
+	- Učesnici: Upravnik u prodaji, Kupac, Posrednik (banka)
+	- Preduslovi: Projekat je u fazi ispunjenja, postoje svi uslovi da se završi i ostvareni su svi pravni osnovi.
+	- Postuslovi: Prodaja je izvršena, kupac čeka kraj projekta.
+	
+	- Glavni tok:
+		1. Upravnik u prodaji predstavlja uslove i mogućnosti prodaje Kupcu
+		2. Kupac bira pogodne uslove i saopštava Upravniku u prodaji
+			2.1 Ako se kupac odluči na plaćanje na rate, lizing ili kredit, dogovaraju se uslovi plaćanja sa Posrednikom.
+				2.1.1 Ako se uslovi ne dogovore, prodaja se neuspešno završava.
+				2.1.2 Ako se uslovi dogovore, nastavak u koraku 3.
+			2.2 Ako se kupac odluči na plaćanje odjednom, Posrednik je zadužen za prebacivanje novca sa jednog na drugi račun.
+				2.2.1 Ako se uslovi ne dogovore, prodaja se neuspešno završava.
+				2.2.2 Ako se uslovi dogovore, nastavak u koraku 3.
+			2.3 Ako se kupac odluči na plaćanje gotovinom, Posrednik proverava regularnost kupoprodaje.
+				2.3.1 Ako se uslovi ne dogovore ili kupoprodaja nije regularna, prodaja se neuspešno završava.
+				2.3.2 Ako se uslovi dogovore, nastavak u koraku 3.
+		3. Dogovoreni uslovi se ostvaruju, Upravnik u prodaji i Posrednik izdaju svu potrebnu dokumentaciju Kupcu.
+		4. Kupovina se privodi kraju i Kupac čeka preuzimanje prostora.
+		
+	- Alternativni tokovi:
+		1.1 Ukoliko je prodaja unapred, Upravnik daje posebne pogodnosti Kupcu i prodaja se nastavlja uobičajenim tokom. Ukoliko je 
+			uobičajena prodaja, vrši se standardna procedura i prodaja se nastavlja normalnim tokom.
+		2.1 Ukoliko Kupac zatraži posebne uslove, kao što su prodaja prostora za posebnu namenu, ili pravo reorganizovanja prostora,
+			Upravnik postavlja uslove za tako nešto, i nastavlja se normalno izvršavanje toka.
+			
+	- Ulaz:
+		Dokumentacija o uslovima i mogućnostima.
+	- Izlaz: 
+		Dokumentacija o (eventualnoj) uspešnoj prodaji.
 
-- Marketing u masovnim medijima i društvenim mrežama(televizija, dnevna, mesečna štampa, specijalizovane internet stranice, fb, tw, ig, in...)
-	- Učesnici: Menadžer za marketing, Menadžer medija, održavaoci naloga na mrežama 
-- Promocije na manifestacijama od značaja (sajmovi, redionice, prezentacije zainteresovanim licima itd)
-	- Učesnici: Menadžer za marketing, promoteri, Zainteresovana lica
+- Oglašavanje u medijima i društvenim mrežama
+	- Opis: Upravnik za oglašavanje dogovara neku vrstu oglašavanja sa Upravnikom medija ili se oglašavanje odvija na društvenim mrežama
+			u kom slučaju Održavaoci naloga sprovode oglašavanje u delo.
 
-{ Neki predlozi u alternativnim tokovima }
-- Promocija kroz društveno angažovanu aktivnost
-	- Učesnici: Menadžer za marketing, promoteri (neretko zaposleni u firmi)...
-- Namenska prodaja (ako prostor ima svoju specificiranu namenu)
-	- Učesnici: menadžer(upravnik) u prodaji, klijent(i)(kupac), posrednik (banka), nadležno lice iz javnog sektora
-- Prodaja uz pravo reorganizovanja prostora (neko kupi dva stana, hoće da ih spoji, npr)
-	- menadžer(upravnik) u prodaji, klijent(kupac), posrednik (banka), inženjer (stručno lice iz kompanije koje ocenjuje izvodljivost zahteva)
+	- Učesnici: Upravnik za oglašavanje, Održavaoci naloga na mrežama, Upravnik medija
+	- Preduslovi: Projekat je u fazi izvršenja ili je završen, postoje potrebni resursi za oglašavanje.
+	- Postuslovi: Veliki broj ljudi je obavešten o ponudama koje se daju.
+	
+	- Glavni tok:
+		1. Upravnik za oglašavanje sastavlja plan za oglašavanje, sa ili bez analize tržišta
+		2. Upravnik za oglašavanje ostvaruje plan oglašavanja
+			2.1 Ako je oglašavanje preko televizije, štampe ili internet strane, Upravnik za oglašavanje dostavlja plan oglašavanja 
+				Upravniku medija, oni postižu dogovor i projekat se oglašava. Nastavak u koraku 3.
+			2.2 Ako je oglašavanje preko društvenih mreža, Upravnik za oglašavanje predaje projekat Održavaocima naloga na mrežama,
+				koji ga uzimaju i razrađuju, vršeći promociju na društvenim mrežama. Nastavak u koraku 3.
+		3. Oglašavanje se odvija.
+		
+	- Alternativni tokovi:
+		3.1 Ako je potrebno, vrši se analiza tržišta, radi prikupljanja rezultata oglašavanja. Oglašavanje se završava. 
+		
+	- Ulaz: Plan projekta
+	- Izlaz: Oglas na navedenim medijima
+	 
+- Promocije na manifestacijama od značaja
+	- Opis: Upravnik za oglašavanje stvara plan prezentovanja i prosleđuje ga Promoterima da ga ostvare pred Zainteresovanim licima.
 
+	- Učesnici: Upravnik za oglašavanje, Promoteri, Zainteresovana lica
+	
+	- Preduslovi: Projekat je u fazi izvršenja ili je završen, postoje resursi za održavanje manifestacije
+	- Postuslovi: Zainteresovana lica su upoznata sa detaljima koji ih interesuju
+	
+	- Glavni tok: 
+		1. Upravnik za oglašavanje organizuje prezentaciju i predaje plan Promoterima.
+		2. Promoteri vrše prezentaciju.
+		3. Zainteresovana lica traže informacije koje im Promoteri daju.
+		
+	- Alternativni tok: 
+		1.1 Upravnik za oglašavanje u planu predviđa neku društveno angažovanu aktivnost koju Promoteri izvršavaju. 
+			Tok se nastavlja u koraku 2.
+		3.1 Ukoliko Zainteresovano lice želi, dogovara se prodaja nakon prezentacije. Prezentacija se završava.
 
+	- Ulaz: Plan projekta
+	- Izlaz: -
+	
