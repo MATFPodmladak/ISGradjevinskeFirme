@@ -1,0 +1,107 @@
+I Odabir potencijalnih podizvođača
+
+Kratak opis: Na osnovu već poznate radne snage koju kompanija poseduje, vrši se odabir potencijalnih podizvođača za sve vrste poslova za koje kompanija nema ljude.
+
+Ucesnprelazi se: Direktor/tehnički direktor/komercijala/tehnička priprema	
+
+Preduslovi: Poznat je spisak svih vrsta poslova potrebnih za izradu projekta.
+Postuslovi: Napravljena je lista potencijalnih podizvođača za svaku potrebnu vrstu posla.
+
+Glavni tok:
+1. Direktor konsultuje spisak svih vrsta poslova potrebnih za izradu projekta.
+2. Direktor zakljucuje za koje sve vrste poslova firma nema ljude (tj. za koje su potrebni podizvodjaci)
+3. Direktor pretrazuje kontakte potencijalnih podizvođača iz baze podataka prethodnih partnera (ako ih ima).
+4. Direktor pretrazuje kontakte potencijalnih podizvođača koji nisu u bazi i ukoliko ih ima, ubacuje ih u bazu.
+5. Direktor iz baze podataka bira spisak potencijalnih podizvođača.
+
+Alternativni tok: /
+
+Ulaz: Spisak svih vrsta poslova potrebnih za izradu projekta.
+Izlaz: Spisak svih potencijalnih podizvođača.
+
+
+
+II Kontakt potencijalnih podizvođača
+
+Kratak opis: Direktor firme kontaktira odabrane potencijalne podizvođače i zapisuje njihove ponude.	Tako dobijene ponude, kompanija uvećava za svoju planiranu zaradu i uključuje u svoju ukupnu cenu koja se šalje investitoru.
+	
+Ucesnprelazi se: Direktor/tehnički direktor/komercijala/tehnicka priprema, tehnička priprema, predstavnik podizvođača
+
+Preduslovi: Postoji spisak svih potencijalnih podizvođača
+Postuslovi: Izracunata je ukupna cena projekta koja je potrebna da se salje investitoru.
+
+Glavni tok:
+1. Direktor kontaktira predstavnika potencijalnog podizvođača i prestavlja mu moguci posao.
+2. Predstavnik podizvođača daje svoju ponudu, odnosno cenu po kojoj njihova firma radi.
+3. Direktor zapisuje ponudu. Korak 1 i 2 se ponavljaju dok se ne kontaktiraju svi podizvodjaci sa liste.
+4. Direktor predaje listu tehnickoj pripremi (Ukoliko tehnicka priprema nije vec vrsila funkciju direktora).
+5. Tehnicka priprema izracunava ukupnu cenu projekta.
+6. Tehnicka priprema salje ukupnu cenu direktoru (Ukoliko tehnicka priprema nije vec vrsila funkciju direktora).
+7. Direktor salje ukupnu cenu investitoru.	
+	
+Alternativni tok:
+U koraku 1, kontakt nije bio ispravan (zastareo, stamparska greska)
+U koraku 2, predstavnik podizvođača iz neopravdanih razloga odbija da saradjuje sa firmom.
+
+Ulaz: Spisak svih potencijalnih podizvođača.
+Izlaz: Ukupna cena projekta.
+
+
+
+III Potražnja najpovoljnijih podizvođača
+
+Kratak opis:  Nakon što je ugovor sa investitorom sklopljen, kompanija još jednom traži potencijalne podizvođače ne bi li našla povoljniju ponudu.
+	
+Ucesnprelazi se: Direktor/tehnički direktor/komercijala/tehnicka priprema, tehnička priprema, predstavnik podizvođača	
+	
+Preduslovi: Investitor je prihvatio ponudu.
+Postuslovi: Napravljena je konacna lista odabranih podizvođača.
+
+Glavni tok:
+1. Direktor pretrazuje kontakte podizvođača
+	1.1 Ukoliko ne postoji podizvođač koje direktor nije kontaktirao prelazi se na korak 4.
+	1.2 Ukoliko postoji, direktor kontaktira predstavnika tog podizvođača
+2. Predstavnik podizvođača daje svoju ponudu.
+	2.1 Ukoliko je cena niza od cene podizvođača koji je obavljao tu vrstu posla, direktor zamenjuje starog podizvođača sa jeftinijim.
+	2.2 Ukoliko je cena visa od cene podizvođača koji je obavljao tu vrstu posla, nista se ne menja.
+3. Korake 1 i 2 se ponavljaju.
+4. Direktor zakljucuje konacnu listu podizvođača.
+
+Alternativni tok:
+U koraku 1.2, kontakt nije bio ispravan (zastareo, stamparska greska)
+U koraku 2, predstavnik podizvođača iz neopravdanih razloga odbija da saradjuje sa firmom.
+
+Ulaz: Spisak kontakta potencijalnih podizvođača.
+Izlaz: Lista konacnih podizvođača.
+	
+	
+
+IV Direktni pregovori sa podizvođačem
+
+Kratak opis: Potencijalno snizavanje cene i sklapanje ugovora.
+	
+Ucesnprelazi se: Direktor, predstavnik podizvođača
+
+Preduslovi: Predstavnik podizvođača radi za firmu koja se nalazi na listi konacnih podizvođača
+Postuslovi: Uspesno zakljucen, ili odbijen ugovor sa podizvođačem
+
+Glavni tok:
+1. Predstavnik podizvođača dolazi u kancelariju direktora.
+2. Direktor predlaze novu cenu ponude (koja je niza od prethodne)
+	2.1 Ukoliko je predstavnik podizvođača voljan da prihvati, prelazi se na korak 3.
+	2.2 Ukoliko predstavnik nije zadovoljan novom ponudom, ali je voljan da cuje druge ponude, prelazi se na korak 2.
+	2.3 Ukoliko predstavnik nije zadovoljan novom ponudom, i nije voljan da cuje druge ponude, prelazi se na korak 3.
+3. Direktor razmatra dogovorenu ponudu.
+	3.1 Ukoliko je zadovoljan cenom, prelazi se na korak 4.
+	3.2 Ukoliko direktor nije zadovoljan cenom, odustaje od ugovora, i prelazi se na slucaj upotrebe 'I Odabir potencijalnih podizvođača'
+4. Direktor i predstavnik podizvođača potpisuju ugovor.
+
+Alternativni tok:
+U koraku 1, predstavnik podizvođača nije mogao da dodje.
+U koraku 2.3, predstavnik podizvođača prihvata novu ponudu kao uvredu i odbija dalju saradnju.
+
+Ulaz:/
+Izlaz: Potpisan ugovor.
+
+
+
