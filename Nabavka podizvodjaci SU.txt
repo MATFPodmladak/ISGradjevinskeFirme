@@ -2,7 +2,7 @@ I Odabir potencijalnih podizvođača
 
 Kratak opis: Na osnovu već poznate radne snage koju kompanija poseduje, vrši se odabir potencijalnih podizvođača za sve vrste poslova za koje kompanija nema ljude.
 
-Ucesnprelazi se: Direktor/tehnički direktor/komercijala/tehnička priprema	
+Ucesnici: Direktor/tehnički direktor/komercijala/tehnička priprema	
 
 Preduslovi: Poznat je spisak svih vrsta poslova potrebnih za izradu projekta.
 Postuslovi: Napravljena je lista potencijalnih podizvođača za svaku potrebnu vrstu posla.
@@ -25,7 +25,7 @@ II Kontakt potencijalnih podizvođača
 
 Kratak opis: Direktor firme kontaktira odabrane potencijalne podizvođače i zapisuje njihove ponude.	Tako dobijene ponude, kompanija uvećava za svoju planiranu zaradu i uključuje u svoju ukupnu cenu koja se šalje investitoru.
 	
-Ucesnprelazi se: Direktor/tehnički direktor/komercijala/tehnicka priprema, tehnička priprema, predstavnik podizvođača
+Ucesnici: Direktor/tehnički direktor/komercijala/tehnicka priprema, tehnička priprema, predstavnik podizvođača
 
 Preduslovi: Postoji spisak svih potencijalnih podizvođača
 Postuslovi: Izracunata je ukupna cena projekta koja je potrebna da se salje investitoru.
@@ -52,7 +52,7 @@ III Potražnja najpovoljnijih podizvođača
 
 Kratak opis:  Nakon što je ugovor sa investitorom sklopljen, kompanija još jednom traži potencijalne podizvođače ne bi li našla povoljniju ponudu.
 	
-Ucesnprelazi se: Direktor/tehnički direktor/komercijala/tehnicka priprema, tehnička priprema, predstavnik podizvođača	
+Ucesnici: Direktor/tehnički direktor/komercijala/tehnicka priprema, tehnička priprema, predstavnik podizvođača	
 	
 Preduslovi: Investitor je prihvatio ponudu.
 Postuslovi: Napravljena je konacna lista odabranih podizvođača.
@@ -80,7 +80,7 @@ IV Direktni pregovori sa podizvođačem
 
 Kratak opis: Potencijalno snizavanje cene i sklapanje ugovora.
 	
-Ucesnprelazi se: Direktor, predstavnik podizvođača
+Ucesnici: Direktor, predstavnik podizvođača
 
 Preduslovi: Predstavnik podizvođača radi za firmu koja se nalazi na listi konacnih podizvođača
 Postuslovi: Uspesno zakljucen, ili odbijen ugovor sa podizvođačem
