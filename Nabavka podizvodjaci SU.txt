@@ -12,7 +12,7 @@ Glavni tok:
 2. Direktor zakljucuje za koje sve vrste poslova firma nema ljude (tj. za koje su potrebni podizvodjaci)
 3. Direktor pretrazuje kontakte potencijalnih podizvođača iz baze podataka prethodnih partnera (ako ih ima).
 4. Direktor pretrazuje kontakte potencijalnih podizvođača koji nisu u bazi i ukoliko ih ima, ubacuje ih u bazu.
-5. Direktor iz baze podataka bira spisak potencijalnih podizvođača.
+5. Direktor pomoću baze podataka pravi spisak potencijalnih podizvođača.
 
 Alternativni tok: /
 
