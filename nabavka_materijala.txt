@@ -1,0 +1,82 @@
+I Provera materijala na stanju
+Kratak opis: Na osnovu plana poslovanja i raspoloživih materijala se procenjuje da li je potrebno vršiti nabavku.
+Učesnici: menadžment, magacioner
+Preduslovi: Postoji plan poslova.
+Postuslovi: Izrađen je plan nabavke.
+Glavni tok:
+1. Menadžment kontaktira magacionera o trenutnom stanju.
+1.1. Ako su svi potrebni materijali raspoloživi prelazi se na korak 2.
+1.2. Ako neki potrebni materijal nije raspoloživ, dodaje se stavka u plan nabavke.
+2. Menadžment izrađuje plan nabavke.
+Alternativni tok: /
+Ulaz: Spisak poslova
+Izlaz: Plan nabavke
+II Izbor dobavljača
+Kratak opis: Na osnovu plana nabavke, menadžment vrši odabir dobavljača.
+Učesnici: menadžment
+Preduslovi: Postoji plan nabavke.
+Postuslovi: Izrađen je spisak dobavljača.
+Glavni tok:
+1. Menadžment procenjuje plan nabavke.
+1.1. Ako plan nabavke nema stavke, prelazi se na korak 6.
+1.2. Ako plan nabavke ima stavke, prelazi se na korak 2.
+2. Menadžment oglašava nabavku.
+3. Menadžment prikuplja ponude dobavljača sa kojima je ranije sarađivao.
+4. Čeka se istek oglasa iz koraka 2.
+5. Menadžment prikuplja ponude dobavljača koji su se javili po oglasu.
+6. Menadžment određuje spisak dobavljača iz obe liste, na osnovu kvaliteta, cene i uslova nabavke.
+Alternativni tok: /
+Ulaz: Plan nabavke
+Izlaz: Spisak dobavljača
+III Predaja i ispunjavanje naloga
+Kratak opis: Izrada, predaja i ispunjavanje naloga za nabavku materijala.
+Učesnici: menadžment, dobavljač
+Preduslovi: Postoji spisak dobavljača.
+Postuslovi: Dobavljač je ispunio nalog.
+Glavni tok:
+1. Menadžment kontaktira dobavljače.
+2. Određuje se vreme isporuke.
+3. Određuje se transport (firmin ili dobavljačev).
+4. Menadžment izrađuje nalog i predaje ga dobavljaču.
+5. Dobavljač u određenom vremenskom roku ispunjava nalog.
+6. Dobavljač ili transport dopremaju robu.
+Alternativni tok:
+1. U koraku 5, ako dobavljač ne ispuni svoje obaveze u roku:
+1.1. Ako je moguće ispuniti nalog, dobavljaču se produžava rok za ispunjavanje naloga i određuju mu se penali.
+1.2. Ako nije moguće ispuniti nalog, on se odbacuje i izrađuje se novi plan nabavke za zadati materijal.
+Ulaz: Spisak dobavljača
+Izlaz: Ispunjeni nalozi
+IV Prihvatanje materija
+Kratak opis: Inspekcija nabavljenih materijala.
+Učesnici: Analitičar
+Preduslovi: Izvršena nabavka materijala.
+Postuslovi: Materijali zadovoljavaju kriterijume.
+Glavni tok:
+1. Analitičar procenjuje količinu materijala.
+2. Analitičar procenjuje kvalitet materijala.
+3. Analitičar daje dozvolu za korišćenje materijala.
+
+Alternativni tok:
+1. U koraku 1, ako je količina materijala manja od naručene količine:
+1.1. Analitičar dostavlja izveštaj menadžmentu koji procenjuje da li je problem nastao na strani dobavljača ili firme.
+1.1.1. Ako je problem nastao na strani dobavljača, šalje se zahtev za isporuku materijala koji nedostaje ili se izvršava nova nabavka i određuju se penali dobavljaču.
+1.1.2. Ako je problem nastao na strani firme, određuje
+2. U koraku 2, ako je materijal manjeg kvaliteta:
+2.1. Dobavljaču se šalje za isporuku materijala odgovarajućeg kvaliteta.
+2.2. Isporučeni materijali se vraćaju dobavljaču.
+2.3. Ako je ponovna isporuka moguća, ona se izvršava.
+2.4. Ako nije moguća, onda se započinje nova nabavka materijala.
+Ulaz: Ispunjen nalog nabavke.
+Izlaz: Izveštaj analitičara.
+V Kupovina i isplata materijala
+Kratak opis: Vrši se isplata nabavljenih materijala.
+Učesnici: finansijski direktor, dobavljač
+Preduslovi: Nabavljeni materijali ispunjavaju sve uslove.
+Postuslovi: Određen je način plaćanja dobavljaču.
+Glavni tok:
+1. Finansijski direktor određuje vrednost nabavke na osnovu izveštaja analitičara.
+2. Obračunavaju se penali za dobavljača ako postoje.
+3. Finansijski direktor i dobavljač određuju način plaćanja.
+Alternativni tok: /
+Ulaz: Izveštaj o kvalitetu materijala.
+Izlaz: Nalog za isplatu
