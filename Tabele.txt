@@ -1,0 +1,10 @@
+Spisak tabela:
+
+Kupci [idkupca];
+Posrednik [idposrednika];
+Mašine [idmašina];
+Materijal [idmaterijala];
+Zaposleni [idzaposlenog, jmbg, ime, prezime];
+Projekti [idprojekta];
+Podizvoðaèi [idpodizvoðaèa];
+Lokacije [idlokacije];
