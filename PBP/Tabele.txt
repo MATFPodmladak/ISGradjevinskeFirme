@@ -6,5 +6,5 @@ Masine [idmasina];
 Materijal [idmaterijala];
 Zaposleni [idzaposlenog, jmbg, ime, prezime];
 Projekti [idprojekta];
-Podizvoðaèi [idpodizvodjaca];
+Podizvodjaci [idpodizvodjaca];
 Lokacije [idlokacije];
