@@ -2,9 +2,9 @@ Spisak tabela:
 
 Kupci [idkupca];
 Posrednik [idposrednika];
-Mašine [idmašina];
+Mašine [idmasina];
 Materijal [idmaterijala];
 Zaposleni [idzaposlenog, jmbg, ime, prezime];
 Projekti [idprojekta];
-Podizvoðaèi [idpodizvoðaèa];
+Podizvoðaèi [idpodizvodjaca];
 Lokacije [idlokacije];
