@@ -1,10 +1,29 @@
-Spisak tabela:
+Kupci[*idKupca];
+Posrednici[*idPosrednika];
+Dobavljaci[*idDobavljaca];
+DobavljaciMasina[*idDobavljaca];
+DobavljaciMaterijala[*idDobavljaca];
+Masine[*idMasine];
+NabavkaMasina[*idNabavke, idDobavljaca];
+StavkaNabavke[*idStavke, idNabavke, idMasine, cena, kolicina];
+Materijali[*idMaterijala, nazivMaterijala];
+MaterijaliMagacin[*idMaterijala];
+NabavkaMaterijala[*idNabavke, idDobavljaca];
+StavkaNabavke[*idStavke, idNabavke, idMaterijala, cena, kolicina];
+Zaposleni[*idZaposlenog, jmbg, ime, prezime, idRadnickogTela];
+Projekti[*idProjekta];
+Podizvodjaci[*idPodizvodjaca];
+Lokacije[*idLokacije];
+RadnickaTela[idRadnickogTela, nazivRadnickogTela];
 
-Kupci [idkupca];
-Posrednik [idposrednika];
-Masine [idmasina];
-Materijal [idmaterijala];
-Zaposleni [idzaposlenog, jmbg, ime, prezime];
-Projekti [idprojekta];
-Podizvodjaci [idpodizvodjaca];
-Lokacije [idlokacije];
+
+Projekti // ?
+Objekti // ?
+Lokacije
+Materijali
+Masine
+Zaposleni
+Kupci
+Posrednici
+Podizvodjaci
+Dobavljaci // ?
