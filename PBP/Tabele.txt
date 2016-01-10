@@ -1,11 +1,11 @@
 Kupci[*idKupca];
 Posrednici[*idPosrednika];
 Dobavljaci[*idDobavljaca];
-DobavljaciMasina[*idDobavljaca];
+DobavljaciMasina[*idDobavljaciMasina];
 DobavljaciMaterijala[*idDobavljaca];
-Masine[*idMasine];
-NabavkaMasina[*idNabavke, idDobavljaca];
-StavkaNabavke[*idStavke, idNabavke, idMasine, cena, kolicina];
+Masine[*idMasine, naziv, opis];
+PorudzbenicaMasina[*idPorudzbenicaMasina, idDobavljaciMasina];
+StavkaPorudzbeniceMasina[*idStavkaPorudzbeniceMasina, idPorudzbenicaMasina, idMasine, cena, kolicina];
 Materijali[*idMaterijala, nazivMaterijala];
 MaterijaliMagacin[*idMaterijala];
 NabavkaMaterijala[*idNabavke, idDobavljaca];
@@ -14,8 +14,7 @@ Zaposleni[*idZaposlenog, jmbg, ime, prezime, idRadnickogTela];
 Projekti[*idProjekta];
 Podizvodjaci[*idPodizvodjaca];
 Lokacije[*idLokacije];
-RadnickaTela[idRadnickogTela, nazivRadnickogTela];
-
+RadnickaTela[idRadnickogTela, naziv];
 
 Projekti // ?
 Objekti // ?
