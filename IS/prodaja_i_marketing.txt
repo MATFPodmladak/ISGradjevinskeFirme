@@ -1,79 +1,57 @@
-﻿--- Prodaja i marketing ---
-
-- Prodaja (uobičajena i unapred)
-	- Opis: Upravnik u prodaji obavlja prodaju prostora koji je obuhvaćen planom izgradnje Kupcu i obavlja se neka vrsta plaćanja, 
-			na rate, kreditom lizingom gotovinom i slično.
-	- Učesnici: Upravnik u prodaji, Kupac, Posrednik (banka)
+﻿-Oglašavanje
+	- Opis: Upravnik u prodaji ostvaruje neku vrstu oglašavanja radi što uspešnije prodaje i unosi detalje u bazu.
+	- Učesnici: Upravnik u prodaji
 	- Preduslovi: Projekat je u fazi ispunjenja, postoje svi uslovi da se završi i ostvareni su svi pravni osnovi.
-	- Postuslovi: Prodaja je izvršena, kupac čeka kraj projekta.
-	
-	- Glavni tok:
-		1. Upravnik u prodaji predstavlja uslove i mogućnosti prodaje Kupcu
-		2. Kupac bira pogodne uslove i saopštava Upravniku u prodaji
-			2.1 Ako se kupac odluči na plaćanje na rate, lizing ili kredit, dogovaraju se uslovi plaćanja sa Posrednikom.
-				2.1.1 Ako se uslovi ne dogovore, prodaja se neuspešno završava.
-				2.1.2 Ako se uslovi dogovore, nastavak u koraku 3.
-			2.2 Ako se kupac odluči na plaćanje odjednom, Posrednik je zadužen za prebacivanje novca sa jednog na drugi račun.
-				2.2.1 Ako se uslovi ne dogovore, prodaja se neuspešno završava.
-				2.2.2 Ako se uslovi dogovore, nastavak u koraku 3.
-			2.3 Ako se kupac odluči na plaćanje gotovinom, Posrednik proverava regularnost kupoprodaje.
-				2.3.1 Ako se uslovi ne dogovore ili kupoprodaja nije regularna, prodaja se neuspešno završava.
-				2.3.2 Ako se uslovi dogovore, nastavak u koraku 3.
-		3. Dogovoreni uslovi se ostvaruju, Upravnik u prodaji i Posrednik izdaju svu potrebnu dokumentaciju Kupcu.
-		4. Kupovina se privodi kraju i Kupac čeka preuzimanje prostora.
-		
-	- Alternativni tokovi:
-		1.1 Ukoliko je prodaja unapred, Upravnik daje posebne pogodnosti Kupcu i prodaja se nastavlja uobičajenim tokom. Ukoliko je 
-			uobičajena prodaja, vrši se standardna procedura i prodaja se nastavlja normalnim tokom.
-		2.1 Ukoliko Kupac zatraži posebne uslove, kao što su prodaja prostora za posebnu namenu, ili pravo reorganizovanja prostora,
-			Upravnik postavlja uslove za tako nešto, i nastavlja se normalno izvršavanje toka.
-			
-	- Ulaz:
-		Dokumentacija o uslovima i mogućnostima.
-	- Izlaz: 
-		Dokumentacija o (eventualnoj) uspešnoj prodaji.
+	- Postuslovi: Objekat (ili više njih) je uspešno oglašeno
 
-- Oglašavanje u medijima i društvenim mrežama
-	- Opis: Upravnik za oglašavanje dogovara neku vrstu oglašavanja sa Upravnikom medija ili se oglašavanje odvija na društvenim mrežama
-			u kom slučaju Održavaoci naloga sprovode oglašavanje u delo.
-
-	- Učesnici: Upravnik za oglašavanje, Održavaoci naloga na mrežama, Upravnik medija
-	- Preduslovi: Projekat je u fazi izvršenja ili je završen, postoje potrebni resursi za oglašavanje.
-	- Postuslovi: Veliki broj ljudi je obavešten o ponudama koje se daju.
-	
 	- Glavni tok:
-		1. Upravnik za oglašavanje sastavlja plan za oglašavanje, sa ili bez analize tržišta
-		2. Upravnik za oglašavanje ostvaruje plan oglašavanja
-			2.1 Ako je oglašavanje preko televizije, štampe ili internet strane, Upravnik za oglašavanje dostavlja plan oglašavanja 
-				Upravniku medija, oni postižu dogovor i projekat se oglašava. Nastavak u koraku 3.
-			2.2 Ako je oglašavanje preko društvenih mreža, Upravnik za oglašavanje predaje projekat Održavaocima naloga na mrežama,
-				koji ga uzimaju i razrađuju, vršeći promociju na društvenim mrežama. Nastavak u koraku 3.
-		3. Oglašavanje se odvija.
-		
-	- Alternativni tokovi:
-		3.1 Ako je potrebno, vrši se analiza tržišta, radi prikupljanja rezultata oglašavanja. Oglašavanje se završava. 
-		
+		1. Upravnik u prodaji sastavlja plan oglašavanja.
+		2. Na osnovu tog plana Upravnik u prodaji vrši oglašavanje.
+		3. Upravnik u prodaji zatim evidentira ostvarene akcije.
+
 	- Ulaz: Plan projekta
-	- Izlaz: Oglas na navedenim medijima
-	 
-- Promocije na manifestacijama od značaja
-	- Opis: Upravnik za oglašavanje stvara plan prezentovanja i prosleđuje ga Promoterima da ga ostvare pred Zainteresovanim licima.
+	- Izlaz: Evidencija o oglašavanju
 
-	- Učesnici: Upravnik za oglašavanje, Promoteri, Zainteresovana lica
-	
-	- Preduslovi: Projekat je u fazi izvršenja ili je završen, postoje resursi za održavanje manifestacije
-	- Postuslovi: Zainteresovana lica su upoznata sa detaljima koji ih interesuju
+-Stavljanje objekta u prodaju
+	- Opis: Upravnik u prodaji evidentira da je objekat spreman za prodaju.
+	- Učesnici: Upravnik u prodaji
+	- Preduslovi: Projekat je u fazi ispunjenja, postoje svi uslovi da se završi i ostvareni su svi pravni osnovi.
+	- Postuslovi: Objekat (ili više njih) je uspešno stavljen u prodaju
+
+	- Glavni tok: 
+		1. Upravnik u prodaji dobija informaciju da je objekat spreman za prodaju.
+		2. Upravnik u prodaji stavlja objekat u prodaju
+
+	- Ulaz: Informacija o spremnosti projekta za prodaju
+	- Izlaz: Evidentirana promena o stanju projakta za prodaju
+
+-Prezentovanje objekta kupcu
+	- Opis: Upravnik u prodaji dovodi kupca do objekta i daje mu dodatne informacije o objektu
+	- Učesnici: Upravnik u prodaji
+	- Preduslovi: Projekat je u stanju za prezentovanje (preformulisati?)
+	- Postuslovi: Kupac je upoznat sa detaljima
 	
 	- Glavni tok: 
-		1. Upravnik za oglašavanje organizuje prezentaciju i predaje plan Promoterima.
-		2. Promoteri vrše prezentaciju.
-		3. Zainteresovana lica traže informacije koje im Promoteri daju.
-		
-	- Alternativni tok: 
-		1.1 Upravnik za oglašavanje u planu predviđa neku društveno angažovanu aktivnost koju Promoteri izvršavaju. 
-			Tok se nastavlja u koraku 2.
-		3.1 Ukoliko Zainteresovano lice želi, dogovara se prodaja nakon prezentacije. Prezentacija se završava.
+		1. Upravnik u prodaji priprema detalje (dokumente, slično) vezano za objekat.
+		2. Upravnik u prodaji prezentuje objekat.
 
-	- Ulaz: Plan projekta
-	- Izlaz: -
+	- Ulaz: Detalji vezani za objekat.
+	- Izlaz: Evidentirana promena o interesovanju za objekat, unošenje detalja vezano za kupca.
+
+-Prodaja
+	- Opis: Upravnik u prodaji obavlja prodaju i evidentira to.
+	- Učesnici: Upravnik u prodaji
+	- Preduslovi: Projekat je u stanju za prodaju (preformulisati?)
+	- Postuslovi: Obavljena prodaja
 	
+	- Glavni tok: 
+		1. Upravnik u prodaji priprema objekat za prodaju.
+		2. Upravnik u prodaji ostvaruje prodaju.
+		3. Upravnik u prodaji evidentira prodaju.
+
+	Alternativni tok:
+		1. U koraku 1, u slučaju da se prodaja vrši pre završetka projekta, Upravnik u prodaji proverava da li je prodato više od 
+		   10% od ukupnog broja objekata, te ako nije odobrava prodaju sa popustom. Tok se nastavlja u drugom koraku glavnog toka.
+
+	- Ulaz: Postoji interesovanje kupca i moguće je ostvariti prodaju.
+	- Izlaz: Evidentirana prodaja i informacije o kupcu.
