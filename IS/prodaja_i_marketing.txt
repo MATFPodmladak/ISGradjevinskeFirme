@@ -28,7 +28,7 @@
 -Prezentovanje objekta kupcu
 	- Opis: Upravnik u prodaji dovodi kupca do objekta i daje mu dodatne informacije o objektu
 	- Učesnici: Upravnik u prodaji
-	- Preduslovi: Projekat je u stanju za prezentovanje (preformulisati?)
+	- Preduslovi: Objekat je spreman za prodaju
 	- Postuslovi: Kupac je upoznat sa detaljima
 	
 	- Glavni tok: 
@@ -41,17 +41,13 @@
 -Prodaja
 	- Opis: Upravnik u prodaji obavlja prodaju i evidentira to.
 	- Učesnici: Upravnik u prodaji
-	- Preduslovi: Projekat je u stanju za prodaju (preformulisati?)
+	- Preduslovi: Objekat je u stanju za prodaju (preformulisati?)
 	- Postuslovi: Obavljena prodaja
 	
 	- Glavni tok: 
 		1. Upravnik u prodaji priprema objekat za prodaju.
 		2. Upravnik u prodaji ostvaruje prodaju.
 		3. Upravnik u prodaji evidentira prodaju.
-
-	Alternativni tok:
-		1. U koraku 1, u slučaju da se prodaja vrši pre završetka projekta, Upravnik u prodaji proverava da li je prodato više od 
-		   10% od ukupnog broja objekata, te ako nije odobrava prodaju sa popustom. Tok se nastavlja u drugom koraku glavnog toka.
 
 	- Ulaz: Postoji interesovanje kupca i moguće je ostvariti prodaju.
 	- Izlaz: Evidentirana prodaja i informacije o kupcu.
