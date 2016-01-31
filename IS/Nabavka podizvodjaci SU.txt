@@ -20,7 +20,7 @@ Alternativni tok: /
 
 II Kontakt potencijalnih podizvođača
 
-Kratak opis: Direktor firme kontaktira odabrane potencijalne podizvođače i zapisuje njihove ponude.	Tako dobijene ponude, kompanija uvećava za svoju planiranu zaradu i uključuje u svoju ukupnu cenu koja se šalje investitoru.
+Kratak opis: Direktor firme kontaktira odabrane potencijalne podizvođače i zapisuje njihove ponude. Tako dobijene ponude, kompanija uvećava za svoju planiranu zaradu i uključuje u svoju ukupnu cenu koja se šalje investitoru.
 	
 Ucesnici: Direktor, predstavnik podizvođača
 
