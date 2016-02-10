@@ -12,7 +12,7 @@ Glavni tok:
 3. Direktor narucuje oglase za one vrste radova za koje firma nema ljude.
 
 Alternativni tok:
-U koraku 2, ne postoje vrste radova za koje firma nema ljude
+U koraku 2, ne postoje vrste radova za koje firma nema ljude. Kraj slucaja upotrebe.
 
 
 
