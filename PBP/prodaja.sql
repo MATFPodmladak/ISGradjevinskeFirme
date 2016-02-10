@@ -1,12 +1,12 @@
 drop table if exists prodaja;
 
 create table prodaja(
-   prodaja_id INT NOT NULL AUTO_INCREMENT,
-   #idRadnika INT NOT NULL,
-   ime_kupca VARCHAR(50) NOT NULL,
-   prezime_kupca VARCHAR(50) NOT NULL,
-   jmbg_kupca INT(13) NOT NULL,
-   datum_prodaje DATE,
+   idProdaje INT NOT NULL AUTO_INCREMENT,
+   idRadnika INT NOT NULL,
+   imeKupca VARCHAR(50) NOT NULL,
+   prezimeKupca VARCHAR(50) NOT NULL,
+   cena int(),
+   datumProdaje DATE,
    PRIMARY KEY ( prodaja_id ),
-   #foreign key (idRadnika) references zaposleni(idRadnika)
+   foreign key (idRadnika) references zaposleni(idRadnika)
 );
