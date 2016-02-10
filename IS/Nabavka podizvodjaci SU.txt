@@ -1,6 +1,24 @@
-﻿I Odabir potencijalnih podizvođača
+﻿Oglasavanje oko potencijalnih podizvodjaca
 
-Kratak opis: Na osnovu već poznate radne snage koju kompanija poseduje, vrši se odabir potencijalnih podizvođača za sve vrste poslova za koje kompanija nema ljude.
+Kratak opis: Direktor procenjuje za koje vrste radova njegova firma nema radnike i salje oglase za te vrste radova
+
+Ucesnici: Direktor
+Preduslovi: Poznat je spisak svih vrsta radova potrebnih za izradu projekta.
+Postuslovi: Oglasi su naruceni
+
+Glavni tok:
+1. Direktor konsultuje spisak svih vrsta radova potrebnih za izradu projekta.
+2. Direktor zakljucuje za koje sve vrste radova firma nema ljude (tj. za koje su potrebni podizvodjaci)
+3. Direktor narucuje oglase za one vrste radova za koje firma nema ljude.
+
+Alternativni tok:
+U koraku 2, ne postoje vrste radova za koje firma nema ljude
+
+
+
+Odabir potencijalnih podizvođača
+
+Kratak opis: Na osnovu već poznate radne snage koju kompanija poseduje, vrši se odabir potencijalnih podizvođača za sve vrste radova za koje kompanija nema ljude.
 
 Ucesnici: Direktor	
 
@@ -8,62 +26,28 @@ Preduslovi: Poznat je spisak svih vrsta poslova potrebnih za izradu projekta.
 Postuslovi: Napravljena je lista potencijalnih podizvođača za svaku potrebnu vrstu posla.
 
 Glavni tok:
-1. Direktor konsultuje spisak svih vrsta poslova potrebnih za izradu projekta.
-2. Direktor zakljucuje za koje sve vrste poslova firma nema ljude (tj. za koje su potrebni podizvodjaci)
-3. Direktor pretrazuje kontakte potencijalnih podizvođača iz baze podataka prethodnih partnera (ako ih ima).
-4. Direktor pretrazuje kontakte potencijalnih podizvođača koji nisu u bazi i ukoliko ih ima, ubacuje ih u bazu.
-5. Direktor pomoću baze podataka pravi spisak potencijalnih podizvođača.
+1. Direktor razmatra spisak kompanija koje su se odazvale na oglas.
+	1.1 Ukoliko ne postoje vise kompanije koje su se odazvale na oglas, preci na korak 2
+	1.2 Ako potencijalni podizvodjac nije u bazi podataka, stavlja ih u bazu
+	1.3 Preci na korak 1.1
+2. Direktor pomoću baze podataka pravi spisak potencijalnih podizvođača.
 
 Alternativni tok: /
 
+Unos sklopljenih ugovora
 
+Kratak opis: Direktor unosi detalje oko ugovora sa podizvodjacima u bazu podataka.
 
-II Kontakt potencijalnih podizvođača
+Ucesnici: Direktor
 
-Kratak opis: Direktor firme kontaktira odabrane potencijalne podizvođače i zapisuje njihove ponude. Tako dobijene ponude, kompanija uvećava za svoju planiranu zaradu i uključuje u svoju ukupnu cenu koja se šalje investitoru.
-	
-Ucesnici: Direktor, predstavnik podizvođača
-
-Preduslovi: Postoji spisak svih potencijalnih podizvođača
-Postuslovi: Napravljena je lista svih ponuda.
+Preduslovi: Postoji makar jedan sklopljeni ugovor sa podizvodjacem
+Postuslovi: Baza podataka je azurirana
 
 Glavni tok:
-1. Direktor kontaktira predstavnika potencijalnog podizvođača i prestavlja mu moguci posao.
-2. Predstavnik podizvođača daje svoju ponudu, odnosno cenu po kojoj njihova firma radi.
-3. Direktor zapisuje ponudu. Korak 1 i 2 se ponavljaju dok se ne kontaktiraju svi podizvodjaci sa liste.
-4. Direktor predaje listu Ekonomisti da izracuna cenu tog dela porjekta	
-	
-Alternativni tok:
-U koraku 1, kontakt nije bio ispravan (zastareo, stamparska greska)
-U koraku 2, predstavnik podizvođača iz neopravdanih razloga odbija da saradjuje sa firmom.
-
-
-
-
-III Potražnja najpovoljnijih podizvođača
-
-Kratak opis:  Nakon što je Ekonomista izračunao ukupnu cenu projekta, Direktor pokušava da nađe još povoljnije podizvođače.
-	
-Ucesnici: Direktor, predstavnik podizvođača	
-	
-Preduslovi: Postoji spisak podizvodjaca i njihovih cena.
-Postuslovi: Napravljena je konacna lista odabranih podizvođača koji su najpovoljniji.
-
-Glavni tok:
-1. Direktor pretrazuje kontakte podizvođača
-	1.1 Ukoliko ne postoji podizvođač koje direktor nije kontaktirao prelazi se na korak 4.
-	1.2 Ukoliko postoji, direktor kontaktira predstavnika tog podizvođača
-2. Predstavnik podizvođača daje svoju ponudu.
-	2.1 Ukoliko je cena niza od cene podizvođača koji je obavljao tu vrstu posla, direktor zamenjuje starog podizvođača sa jeftinijim.
-	2.2 Ukoliko je cena visa od cene podizvođača koji je obavljao tu vrstu posla, nista se ne menja.
-3. Koraci 1 i 2 se ponavljaju.
-4. Direktor zakljucuje konacnu listu podizvođača.
+1. Direktor konsultuje spisak sklopljenih ugovora
+	1.1 Ako ne postoji neunesen ugovor, preci na korak 2 
+	1.2 Ako postoji, uneti ga u bazu. Preci na korak 1.
+2. Zavrsetak slucaja upotrebe.
 
 Alternativni tok:
-U koraku 1.2, kontakt nije bio ispravan (zastareo, stamparska greska)
-U koraku 2, predstavnik podizvođača iz neopravdanih razloga odbija da saradjuje sa firmom.
-	
-	
-
-
-
+U koraku 1. Direktor je izgbio spisak. Preci na korak 2.
