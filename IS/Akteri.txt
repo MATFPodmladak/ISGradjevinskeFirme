@@ -1,4 +1,4 @@
-Lokacija, planiranje finansije:
+﻿Lokacija, planiranje finansije:
 Menadžer, arhitekta, građevinac, direktor
 
 Tok rodova:
@@ -11,3 +11,6 @@ menadžment, magacioner, dobavljač, analitičar, finansijski direktor
 
 Nabavka podizvođača:
 Direktor, tehnička priprema, predstavnik podizvođača
+
+Prodaja i marketing:
+Upravnik u prodaji
