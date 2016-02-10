@@ -27,7 +27,9 @@ Postuslovi: Napravljena je lista podizvođača za svaku potrebnu vrstu posla.
 
 Glavni tok:
 1. Direktor razmatra spisak svih koji su se odazvali na oglas
-2. Direktor vrsi odabir na osnovu cene i kvaliteta koji su poznati za nekog podizvodjaca
+2. Direktor razdvaja ljude sa kojima su radili
+3. Direktor razdvaja nove ljude
+4. Direktor vrsi odabir na osnovu cene i kvaliteta koji su poznati za nekog podizvodjaca
 
 Alternativni tok: /
 
