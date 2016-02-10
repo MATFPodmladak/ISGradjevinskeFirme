@@ -1,6 +1,6 @@
-﻿Oglasavanje oko potencijalnih podizvodjaca
+﻿Oglasavanje radova za podizvodjace
 
-Kratak opis: Direktor procenjuje za koje vrste radova njegova firma nema radnike i salje oglase za te vrste radova
+Kratak opis: Direktor procenjuje za koje vrste radova na projektu su potrebni radnici i salje oglase za te vrste radova
 
 Ucesnici: Direktor
 Preduslovi: Poznat je spisak svih vrsta radova potrebnih za izradu projekta.
@@ -23,16 +23,14 @@ Kratak opis: Na osnovu već poznate radne snage koju kompanija poseduje, vrši s
 Ucesnici: Direktor	
 
 Preduslovi: Poznat je spisak svih vrsta poslova potrebnih za izradu projekta.
-Postuslovi: Napravljena je lista potencijalnih podizvođača za svaku potrebnu vrstu posla.
+Postuslovi: Napravljena je lista podizvođača za svaku potrebnu vrstu posla.
 
 Glavni tok:
-1. Direktor razmatra spisak kompanija koje su se odazvale na oglas.
-	1.1 Ukoliko ne postoje vise kompanije koje su se odazvale na oglas, preci na korak 2
-	1.2 Ako potencijalni podizvodjac nije u bazi podataka, stavlja ih u bazu
-	1.3 Preci na korak 1.1
-2. Direktor pomoću baze podataka pravi spisak potencijalnih podizvođača.
+1. Direktor razmatra spisak svih koji su se odazvali na oglas
+2. Direktor vrsi odabir na osnovu cene i kvaliteta koji su poznati za nekog podizvodjaca
 
 Alternativni tok: /
+
 
 Unos sklopljenih ugovora
 
@@ -47,7 +45,7 @@ Glavni tok:
 1. Direktor konsultuje spisak sklopljenih ugovora
 	1.1 Ako ne postoji neunesen ugovor, preci na korak 2 
 	1.2 Ako postoji, uneti ga u bazu. Preci na korak 1.
-2. Zavrsetak slucaja upotrebe.
+2. Ukoliko neki podizvodjac nije bio prethodno u bazi, unosi ga u bazu.
 
 Alternativni tok:
 U koraku 1. Direktor je izgbio spisak. Preci na korak 2.
