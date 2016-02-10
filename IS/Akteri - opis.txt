@@ -1,0 +1,13 @@
+Radnici
+
+Arhitekta, posao arhitekte je da na osnovu okvira, koje postavlja građevinski inženjer, projektuje zgradu i, ako ima potrebe, napravi promene vezane za materijal koj će se koristiti.
+
+Građevinski inženjer, analizira zemljište na kom se radi, vrši odabir i količinu materijala, broj potrebnih radnika i potrebne mašine.
+
+Ekonomista, ima za dužnost da uradi finansisku analizu onoga što građevinski inženjer i arhitekta odrade i da raspodeli finansije u odnosu na potrebe.
+
+Šef gradilišta, organizuje posao na samom gradilištu. Sastavlja timove ljudi za različita zaduženja, određuje plan rada u odnosu na plan ciljeva. Svake nedelje modifikuje plan rada i po potrebi plan ciljeva u odnosu na postignu ucinak te nedelje.
+
+Šef tima, daje izveštaj koliko je uspeo njegov tim da uradi u toku radne nedelje.
+
+Pomoćnik šefa gradilišta, zadužen za proveru stanja na gradilištu. Stanje mašina i količina materijala su mu glavna zaduženja.
