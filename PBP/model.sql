@@ -146,3 +146,33 @@ create table stavkeNabavkeMasina (
 	foreign key(idMasine) references masine(idMasine)
 );
 
+
+drop table if exists ugovoriSaPodizvodjacima;
+drop table if exists podizvodjaci;
+drop table if exists radovi;
+
+
+create table radovi (
+	idRadovi int(11) not null auto_increment,
+	naziv varchar(50),
+	primary key(idRadovi)
+);
+
+create table podizvodjaci (
+	idPodizvodjaca int(11) not null auto_increment,
+	naziv varchar(50),
+	primarniRadId int(11)
+	primary key(idPodizvodjaca),
+	foreign key (primarniRadId) references radovi(idRadovi)
+);
+
+create table ugovoriSaPodizvodjacima (
+	idUgovora int(11) not null auto_increment,
+	idPodizvodjaca int(11),
+	datumPocetkaRadova DATE,
+	radId int(11),
+	primary key(idUgovora),
+	foreign key (idPodizvodjaca) references podizvodjaci(idPodizvodjaca),
+	foreign key (radId) references radovi(idRadovi)
+);
+
