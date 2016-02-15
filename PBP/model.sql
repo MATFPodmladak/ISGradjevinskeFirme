@@ -1,15 +1,13 @@
 create database if not exists gradjevinskaFirma;
-
 use gradjevinskaFirma;
 
+# Table dropping
 
 drop table if exists garaza;
-drop table if exists ostvareneNabavkeMasina;
 drop table if exists stavkeNabavkeMasina;
 drop table if exists nabavkeMasina;
 drop table if exists masine;
 drop table if exists skladiste;
-drop table if exists ostvareneNabavkeMaterijala;
 drop table if exists stavkeNabavkeMaterijala;
 drop table if exists nabavkeMaterijala;
 drop table if exists materijali;
@@ -17,153 +15,153 @@ drop table if exists dobavljaci;
 drop table if exists ugovoriSaPodizvodjacima;
 drop table if exists podizvodjaci;
 drop table if exists radovi;
-drop table if exists prodaje;
+drop table if exists prodaja;
 drop table if exists pozicije;
 drop table if exists zaposleni;
 
+# Nabavka materijala
+
+create table zaposleni (
+	idZaposlenog int not null auto_increment,
+	ime varchar(255),
+	prezime varchar(255),
+	primary key(idZaposlenog)
+);
 
 create table materijali (
-	idMaterijala int(11) not null auto_increment,
-	naziv varchar(45),
-	opis varchar(256),
-	jedinica varchar(15),
+	idMaterijala int not null auto_increment,
+	naziv varchar(255) not null,
+	opis text,
+	jedinica enum ('kg', 'm', 'm2', 'm3'),
 	primary key(idMaterijala)
 );
 
 create table skladiste (
-	idMaterijala int(11),
+	idMaterijala int not null,
 	kolicina decimal(10, 2) not null,
-	kvalitet varchar(10),
+	kvalitet enum('I', 'II', 'III', 'IV'),
 	nabavnaCena decimal(10, 2),
-	foreign key (idMaterijala) references materijali(idMaterijala)
+    primary key (idMaterijala, kvalitet, nabavnaCena),
+	foreign key (idMaterijala) references materijali(idMaterijala),
+    check (kolicina > .0 and nabavnaCena >= .0)
 );
 
 create table dobavljaci (
-	idDobavljaca int(11) not null auto_increment,
-	ime varchar(256) not null,
-	adresa varchar(256) not null,
-	telefon varchar(16) not null,
+	idDobavljaca int not null auto_increment,
+	ime varchar(255) not null,
+	adresa varchar(255) not null,
+	telefon varchar(255) not null,
 	primary key(idDobavljaca)
 );
 
 create table nabavkeMaterijala (
-	idNabavke int(11) not null auto_increment,
-	idDobavljaca int(11),
+	idNabavke int not null auto_increment,
+	idDobavljaca int,
 	datumPrijave date,
     datumIsporuke date default null,
+    odobrio int default null,
 	primary key(idNabavke),
-	foreign key (idDobavljaca) references dobavljaci(idDobavljaca)
+	foreign key (idDobavljaca) references dobavljaci(idDobavljaca),
+    foreign key (odobrio) references zaposleni(idZaposlenog)
 );
-
 
 create table stavkeNabavkeMaterijala (
-	idStavkeNabavke int(11) not null auto_increment,
-	idNabavke int(11),
-	idMaterijala int(11),
+	idStavkeNabavke int not null auto_increment,
+	idNabavke int not null,
+	idMaterijala int not null,
 	kolicina decimal(10, 2),
 	cena decimal(10, 2),
-	kvalitet varchar(10),
+	kvalitet enum('I', 'II', 'III', 'IV'),
 	primary key(idStavkeNabavke, idNabavke),
 	foreign key(idNabavke) references nabavkeMaterijala(idNabavke),
-	foreign key(idMaterijala) references materijali(idMaterijala)
+	foreign key(idMaterijala) references materijali(idMaterijala),
+    check (kolicina > .0 and cena >= .0)
 );
 
+# Zaposleni
 
 
-
-
-
-create table zaposleni (
-	idZaposlenog int(11) not null auto_increment,
-	ime varchar(45),
-	prezime varchar(45),
-	primary key(idZaposlenog)
-);
 
 create table pozicije (
-	idZaposlenog int(11) not null,
+	idZaposlenog int not null,
 	pozicija enum('direktor', 'ekonomista', 'arhitekta', 'inzenjer', 'sef tima', 'sef gradilista', 'prodavac', 'magacioner', 'kontrolor'),
 	foreign key(idZaposlenog) references zaposleni(idZaposlenog)
 );
 
-create table prodaje (
-   idProdaje INT NOT NULL AUTO_INCREMENT,
-   idProdavca INT(11) NOT NULL,
-   idObjekta int(11),
-   imeKupca VARCHAR(50) NOT NULL,
-   prezimeKupca VARCHAR(50) NOT NULL,
-   cena int,
-   datumProdaje DATE,
-   PRIMARY KEY ( idProdaje ),
-   foreign key (idProdavca) references zaposleni(idZaposlenog)
+create table prodaja (
+	idProdaje int not null auto_increment,
+	idProdavca int not null,
+	idObjekta int not null,
+	imeKupca varchar(255) not null,
+	prezimeKupca varchar(255) not null,
+	cena decimal(10, 2) not null,
+	datumProdaje date,
+	primary key(idProdaje),
+	foreign key(idProdavca) references zaposleni(idZaposlenog),
+	check (cena >= .0)
 );
 
-
-
-use gradjevinskaFirma;
-
+# Nabavka masina
 
 create table masine (
-	idMasine int(11) not null auto_increment,
-	naziv varchar(45),
-	svrha varchar(256),
-	primary key(idMasine)
+    idMasine int not null auto_increment,
+    naziv varchar(255) not null,
+    opis text,
+    primary key(idMasine)
 );
 
 create table garaza (
-	idMasine int(11),
-	brojMasina int(2) not null,
+	idMasine int not null,
+	brojMasina smallint not null,
 	cena decimal(10, 2),
-	foreign key (idMasine) references masine(idMasine)
+	foreign key (idMasine) references masine(idMasine),
+   check (cena >= .0)
 );
 
-
 create table nabavkeMasina (
-	idNabavke int(11) not null auto_increment,
-	idDobavljaca int(11),
-	datumPrijave DATE,
+	idNabavke int not null auto_increment,
+	idDobavljaca int not null,
+	datumPrijave date not null,
     datumIsporuke date default null,
 	primary key(idNabavke),
 	foreign key (idDobavljaca) references dobavljaci(idDobavljaca)
 );
 
 create table stavkeNabavkeMasina (
-	idStavkeNabavke int(11) not null auto_increment,
-	idNabavke int(11),
-	idMasine int(11),
-	brojMasina int(11),
+	idStavkeNabavke int not null auto_increment,
+	idNabavke int not null,
+	idMasine int not null,
+	brojMasina smallint not null,
 	cena decimal(10, 2),
 	primary key(idStavkeNabavke, idNabavke),
 	foreign key(idNabavke) references nabavkeMasina(idNabavke),
-	foreign key(idMasine) references masine(idMasine)
+	foreign key(idMasine) references masine(idMasine),
+	check (cena >= .0)
 );
 
+# Izvodjenje radova
 
-
-
-
-CREATE TABLE radovi (
-    idRadovi INT(11) NOT NULL AUTO_INCREMENT,
-    naziv VARCHAR(50),
-    PRIMARY KEY (idRadovi)
+create table radovi (
+    idRada int not null auto_increment,
+    naziv varchar(255) not null,
+    opis text,
+    primary key (idRada)
 );
+
+# Podizvodjaci
 
 create table podizvodjaci (
-	idPodizvodjaca int(11) not null auto_increment,
-	naziv varchar(50),
-	primarniRadId int(11),
-	primary key(idPodizvodjaca),
-	foreign key (primarniRadId) references radovi(idRadovi)
+	idPodizvodjaca int not null auto_increment,
+	naziv varchar(255) not null,
+	primary key(idPodizvodjaca)
 );
 
 create table ugovoriSaPodizvodjacima (
-	idUgovora int(11) not null auto_increment,
-	idPodizvodjaca int(11),
-	datumPocetkaRadova DATE,
-	radId int(11),
+	idUgovora int not null auto_increment,
+	idPodizvodjaca int,
+	datumPocetkaRadova date,
+	idRada int,
 	primary key(idUgovora),
 	foreign key (idPodizvodjaca) references podizvodjaci(idPodizvodjaca),
-	foreign key (radId) references radovi(idRadovi)
+	foreign key (idRada) references radovi(idRada)
 );
-
-select * from ugovoriSaPodizvodjacima;
