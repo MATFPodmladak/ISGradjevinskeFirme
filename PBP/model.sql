@@ -42,9 +42,9 @@ create table skladiste (
 	kolicina decimal(10, 2) not null,
 	kvalitet enum('I', 'II', 'III', 'IV'),
 	nabavnaCena decimal(10, 2),
+    valuta enum('RSD', 'USD', 'EUR'),
     primary key (idMaterijala, kvalitet, nabavnaCena),
-	foreign key (idMaterijala) references materijali(idMaterijala),
-    check (kolicina > .0 and nabavnaCena >= .0)
+	foreign key (idMaterijala) references materijali(idMaterijala)
 );
 
 create table dobavljaci (
@@ -72,11 +72,11 @@ create table stavkeNabavkeMaterijala (
 	idMaterijala int not null,
 	kolicina decimal(10, 2),
 	cena decimal(10, 2),
+    valuta enum('RSD', 'USD', 'EUR'),
 	kvalitet enum('I', 'II', 'III', 'IV'),
 	primary key(idStavkeNabavke, idNabavke),
 	foreign key(idNabavke) references nabavkeMaterijala(idNabavke),
-	foreign key(idMaterijala) references materijali(idMaterijala),
-    check (kolicina > .0 and cena >= .0)
+	foreign key(idMaterijala) references materijali(idMaterijala)
 );
 
 # Zaposleni
@@ -89,6 +89,15 @@ create table pozicije (
 	foreign key(idZaposlenog) references zaposleni(idZaposlenog)
 );
 
+create table gradjevinskiObjekti (
+	 idObjekta int(11) NOT NULL AUTO_INCREMENT,
+	 velicina smallint not null,
+	 stanjeProdaje enum('Za prodaju', 'Nespreman') default 'Nespreman',
+	 stanjeOglasavanja enum('Oglasen', 'Neoglasen') default 'Neoglasen',
+	 stanjePrezentovanja enum('Prezentovan', 'Neprezentovan') default 'Neprezentovan',
+	 PRIMARY KEY ( idObjekta )
+);
+
 create table prodaja (
 	idProdaje int not null auto_increment,
 	idProdavca int not null,
@@ -96,22 +105,13 @@ create table prodaja (
 	imeKupca varchar(255) not null,
 	prezimeKupca varchar(255) not null,
 	cena decimal(10, 2) not null,
+    valuta enum('RSD', 'USD', 'EUR'),
 	datumProdaje date,
 	primary key(idProdaje),
 	foreign key(idProdavca) references zaposleni(idZaposlenog),
-	foreign key (idObjekta) references gradjevinskiObjekti(idObjekta),
-	check (cena >= .0)
+	foreign key (idObjekta) references gradjevinskiObjekti(idObjekta)
 );
 
-create table gradjevinskiObjekti (
-	 idObjekta int(11) NOT NULL AUTO_INCREMENT,
-	 velicina smallint not null,
-	 stanjeProdaje enum('Za prodaju', 'Nespreman') default 'Nespreman',
-	 stanjeOglasavanja enum('Oglasen', 'Neoglasen') default 'Neoglasen',
-	 stanjePrezentovanja enum('Prezentovan', 'Neprezentovan') default 'Neprezentovan',
-	 PRIMARY KEY ( idObjekta ),
-	 check (velicina > 0)
-);
 
 # Nabavka masina
 
@@ -126,8 +126,8 @@ create table garaza (
 	idMasine int not null,
 	brojMasina smallint not null,
 	cena decimal(10, 2),
-	foreign key (idMasine) references masine(idMasine),
-   check (cena >= .0)
+    valuta enum('RSD', 'USD', 'EUR'),
+	foreign key (idMasine) references masine(idMasine)
 );
 
 create table nabavkeMasina (
@@ -145,10 +145,10 @@ create table stavkeNabavkeMasina (
 	idMasine int not null,
 	brojMasina smallint not null,
 	cena decimal(10, 2),
+    valuta enum('RSD', 'USD', 'EUR'),
 	primary key(idStavkeNabavke, idNabavke),
 	foreign key(idNabavke) references nabavkeMasina(idNabavke),
-	foreign key(idMasine) references masine(idMasine),
-	check (cena >= .0)
+	foreign key(idMasine) references masine(idMasine)
 );
 
 # Izvodjenje radova
