@@ -18,6 +18,7 @@ drop table if exists radovi;
 drop table if exists prodaja;
 drop table if exists pozicije;
 drop table if exists zaposleni;
+drop table if exists gradjevinskiObjekti;
 
 # Nabavka materijala
 
@@ -98,7 +99,18 @@ create table prodaja (
 	datumProdaje date,
 	primary key(idProdaje),
 	foreign key(idProdavca) references zaposleni(idZaposlenog),
+	foreign key (idObjekta) references gradjevinskiObjekti(idObjekta),
 	check (cena >= .0)
+);
+
+create table gradjevinskiObjekti (
+	 idObjekta int(11) NOT NULL AUTO_INCREMENT,
+	 velicina smallint not null,
+	 stanjeProdaje enum('Za prodaju', 'Nespreman') default 'Nespreman',
+	 stanjeOglasavanja enum('Oglasen', 'Neoglasen') default 'Neoglasen',
+	 stanjePrezentovanja enum('Prezentovan', 'Neprezentovan') default 'Neprezentovan',
+	 PRIMARY KEY ( idObjekta ),
+	 check (velicina > 0)
 );
 
 # Nabavka masina
