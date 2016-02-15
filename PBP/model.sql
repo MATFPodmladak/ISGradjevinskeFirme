@@ -38,7 +38,7 @@ create table materijali (
 );
 
 create table skladiste (
-	idMaterijala int not null auto_increment,
+	idMaterijala int not null,
 	kolicina decimal(10, 2) not null,
 	kvalitet enum('I', 'II', 'III', 'IV'),
 	nabavnaCena decimal(10, 2),
@@ -84,13 +84,13 @@ create table stavkeNabavkeMaterijala (
 
 
 create table pozicije (
-	idZaposlenog int not null auto_increment,
+	idZaposlenog int not null,
 	pozicija enum('direktor', 'ekonomista', 'arhitekta', 'inzenjer', 'sef tima', 'sef gradilista', 'prodavac', 'magacioner', 'kontrolor'),
 	foreign key(idZaposlenog) references zaposleni(idZaposlenog)
 );
 
 create table gradjevinskiObjekti (
-	 idObjekta int(11) NOT NULL AUTO_INCREMENT auto_increment,
+	 idObjekta int(11) NOT NULL AUTO_INCREMENT,
 	 velicina smallint not null,
 	 stanjeProdaje enum('Za prodaju', 'Nespreman') default 'Nespreman',
 	 stanjeOglasavanja enum('Oglasen', 'Neoglasen') default 'Neoglasen',
@@ -123,7 +123,7 @@ create table masine (
 );
 
 create table garaza (
-	idMasine int not null auto_increment,
+	idMasine int not null,
 	brojMasina smallint not null,
 	cena decimal(10, 2),
     valuta enum('RSD', 'USD', 'EUR'),
