@@ -3,12 +3,24 @@ create database if not exists gradjevinskaFirma;
 use gradjevinskaFirma;
 
 
+drop table if exists garaza;
+drop table if exists ostvareneNabavkeMasina;
+drop table if exists stavkeNabavkeMasina;
+drop table if exists nabavkeMasina;
+drop table if exists masine;
 drop table if exists skladiste;
 drop table if exists ostvareneNabavkeMaterijala;
 drop table if exists stavkeNabavkeMaterijala;
 drop table if exists nabavkeMaterijala;
 drop table if exists materijali;
 drop table if exists dobavljaci;
+drop table if exists ugovoriSaPodizvodjacima;
+drop table if exists podizvodjaci;
+drop table if exists radovi;
+drop table if exists prodaje;
+drop table if exists pozicije;
+drop table if exists zaposleni;
+
 
 create table materijali (
 	idMaterijala int(11) not null auto_increment,
@@ -38,16 +50,11 @@ create table nabavkeMaterijala (
 	idNabavke int(11) not null auto_increment,
 	idDobavljaca int(11),
 	datumPrijave date,
+    datumIsporuke date default null,
 	primary key(idNabavke),
 	foreign key (idDobavljaca) references dobavljaci(idDobavljaca)
 );
 
-create table ostvareneNabavkeMaterijala (
-	idNabavke int(11) not null,
-	datumIsporuke date not null,
-	primary key(idNabavke),
-	foreign key(idNabavke) references nabavkeMaterijala(idNabavke)
-);
 
 create table stavkeNabavkeMaterijala (
 	idStavkeNabavke int(11) not null auto_increment,
@@ -63,9 +70,6 @@ create table stavkeNabavkeMaterijala (
 
 
 
-drop table if exists prodaje;
-drop table if exists pozicije;
-drop table if exists zaposleni;
 
 
 
@@ -95,15 +99,9 @@ create table prodaje (
 );
 
 
-create database if not exists gradjevinskaFirma;
 
 use gradjevinskaFirma;
 
-drop table if exists garaza;
-drop table if exists ostvareneNabavkeMasina;
-drop table if exists stavkeNabavkeMasina;
-drop table if exists nabavkeMasina;
-drop table if exists masine;
 
 create table masine (
 	idMasine int(11) not null auto_increment,
@@ -124,15 +122,9 @@ create table nabavkeMasina (
 	idNabavke int(11) not null auto_increment,
 	idDobavljaca int(11),
 	datumPrijave DATE,
+    datumIsporuke date default null,
 	primary key(idNabavke),
 	foreign key (idDobavljaca) references dobavljaci(idDobavljaca)
-);
-
-create table ostvareneNabavkeMasina (
-	idNabavke int(11) not null,
-	datumIsporuke DATE not null,
-	primary key(idNabavke),
-	foreign key(idNabavke) references nabavkeMasina(idNabavke)
 );
 
 create table stavkeNabavkeMasina (
@@ -147,21 +139,19 @@ create table stavkeNabavkeMasina (
 );
 
 
-drop table if exists ugovoriSaPodizvodjacima;
-drop table if exists podizvodjaci;
-drop table if exists radovi;
 
 
-create table radovi (
-	idRadovi int(11) not null auto_increment,
-	nazivRada varchar(50),
-	primary key(idRadovi)
+
+CREATE TABLE radovi (
+    idRadovi INT(11) NOT NULL AUTO_INCREMENT,
+    naziv VARCHAR(50),
+    PRIMARY KEY (idRadovi)
 );
 
 create table podizvodjaci (
 	idPodizvodjaca int(11) not null auto_increment,
-	nazivFirme varchar(50),
-	primarniRadId int(11)
+	naziv varchar(50),
+	primarniRadId int(11),
 	primary key(idPodizvodjaca),
 	foreign key (primarniRadId) references radovi(idRadovi)
 );
@@ -176,3 +166,4 @@ create table ugovoriSaPodizvodjacima (
 	foreign key (radId) references radovi(idRadovi)
 );
 
+select * from ugovoriSaPodizvodjacima;
