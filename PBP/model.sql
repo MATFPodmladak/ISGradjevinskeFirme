@@ -154,13 +154,13 @@ drop table if exists radovi;
 
 create table radovi (
 	idRadovi int(11) not null auto_increment,
-	naziv varchar(50),
+	nazivRada varchar(50),
 	primary key(idRadovi)
 );
 
 create table podizvodjaci (
 	idPodizvodjaca int(11) not null auto_increment,
-	naziv varchar(50),
+	nazivFirme varchar(50),
 	primarniRadId int(11)
 	primary key(idPodizvodjaca),
 	foreign key (primarniRadId) references radovi(idRadovi)
