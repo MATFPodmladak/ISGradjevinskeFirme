@@ -1,0 +1,32 @@
+34;Krec;generic note;kg
+36;Armatura;generic note;m
+38;Kablovi;generic note;m
+40;Stiropor;generic note;m2
+42;Staklena vuna;generic note;m2
+44;Crep;generic note;m2
+46;Opeka;generic note;m2
+48;Lim;generic note;m2
+50;Cement;generic note;m3
+52;Sljunak;generic note;m3
+54;Pesak;generic note;m3
+56;Gips;generic note;m3
+58;Cigla;generic note;m3
+60;Blok;generic note;m3
+62;Drvo;generic note;m3
+64;Kamen;generic note;m3
+34;Krec;generic note;kg
+36;Armatura;generic note;m
+38;Kablovi;generic note;m
+40;Stiropor;generic note;m2
+42;Staklena vuna;generic note;m2
+44;Crep;generic note;m2
+46;Opeka;generic note;m2
+48;Lim;generic note;m2
+50;Cement;generic note;m3
+52;Sljunak;generic note;m3
+54;Pesak;generic note;m3
+56;Gips;generic note;m3
+58;Cigla;generic note;m3
+60;Blok;generic note;m3
+62;Drvo;generic note;m3
+64;Kamen;generic note;m3
