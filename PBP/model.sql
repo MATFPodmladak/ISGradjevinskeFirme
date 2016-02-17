@@ -67,7 +67,7 @@ create table stavkeNabavkeMaterijala (
 
 create table ovlascenja (
 	idOvlascenja int not null auto_increment,
-	naziv varchar(255),
+	nazivOvlascenja varchar(255) not null,
     primary key(idOvlascenja)
 );
 
@@ -81,9 +81,9 @@ create table pozicije (
 create table gradjevinskiObjekti (
 	idObjekta int not null auto_increment,
 	velicina smallint not null,
-	stanjeProdaje enum('Za prodaju', 'Nespreman') default 'Nespreman',
-	stanjeOglasavanja enum('Oglasen', 'Neoglasen') default 'Neoglasen',
-	stanjePrezentovanja enum('Prezentovan', 'Neprezentovan') default 'Neprezentovan',
+	spremanZaProdaju bool default false not null,
+    oglasen bool default false not null,
+    spremanZaPrezentovanje bool default false not null,
 	primary key (idObjekta)
 );
 
@@ -214,6 +214,19 @@ begin
 	if new.datumIsporuke is not null and new.datumIsporuke < new.datumPrijave then
 		signal sqlstate '45000' set message_text = "Datum isporuke mora biti nakon datuma prijave nabavke";
 	end if;
+     if new.odobrio is not null
+    and new.odobrio not in (
+		select z.idZaposlenog
+        from zaposleni z
+        join pozicije p
+			on z.idZaposlenog=p.idZaposlenog
+		join ovlascenja o
+			on p.idOvlascenja=o.idOvlascenja
+		where
+			p.naziv like 'direktor'
+    ) then
+		signal sqlstate '45000' set message_text = "Direktor jedini ima pravo da odobri nabavku";
+    end if;
 end
 $$
 
@@ -223,6 +236,19 @@ begin
 	if new.datumIsporuke is not null and new.datumIsporuke < new.datumPrijave then
 		signal sqlstate '45000' set message_text = "Datum isporuke mora biti nakon datuma prijave nabavke";
 	end if;
+    if new.odobrio is not null
+    and new.odobrio not in (
+		select z.idZaposlenog
+        from zaposleni z
+        join pozicije p
+			on z.idZaposlenog=p.idZaposlenog
+		join ovlascenja o
+			on p.idOvlascenja=o.idOvlascenja
+		where
+			p.naziv like 'direktor'
+    ) then
+		signal sqlstate '45000' set message_text = "Direktor jedini ima pravo da odobri nabavku";
+    end if;
 end
 $$
 
@@ -233,6 +259,7 @@ begin
 	if new.cena < .0 or new.kolicina <= .0  then
 		signal sqlstate '45000' set message_text = "Vrednost nije ispravna";
     end if;
+   
 end
 $$
 
@@ -263,3 +290,45 @@ begin
 end
 $$
 
+create trigger prodaja_bi before insert on prodaja
+for each row
+begin
+	if new.idProdavca not in (
+		select z.idZaposlenog
+        from zaposleni z
+        join pozicije p
+			on z.idZaposlenog=p.idZaposlenog
+		join ovlascenja o
+			on p.idOvlascenja=o.idOvlascenja
+		where
+			p.naziv like 'prodavac'
+    ) then
+		signal sqlstate '45000' set message_text = "Prodavac jedini ima pravo da prodaje objekte.";
+    end if;
+    if false in (
+		select spremanZaProdaju
+        from gradjevinskiObjekti
+        where gradjevinskiObjekti.idObjekta=new.idObjekta
+    ) then
+		signal sqlstate '45000' set message_text = "Objekat mora biti spreman za prodaju.";
+    end if;
+end
+$$
+
+create trigger prodaja_bu before update on prodaja
+for each row
+begin
+	if new.idProdavca not in (
+		select z.idZaposlenog
+        from zaposleni z
+        join pozicije p
+			on z.idZaposlenog=p.idZaposlenog
+		join ovlascenja o
+			on p.idOvlascenja=o.idOvlascenja
+		where
+			p.naziv like 'prodavac'
+    ) then
+		signal sqlstate '45000' set message_text = "Prodavac jedini ima pravo da prodaje objekte.";
+    end if;
+end
+$$
