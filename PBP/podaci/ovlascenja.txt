@@ -1,0 +1,5 @@
+10;Direktor
+11;Ekonomista
+12;Gredjevinski inženjer
+13;Arhitekta
+14;Prodavac
