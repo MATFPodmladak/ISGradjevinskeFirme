@@ -114,8 +114,10 @@ create table nabavkeMasina (
 	idDobavljaca int not null,
 	datumPrijave date not null,
 	datumIsporuke date default null,
+    odobrio int not null,
 	primary key (idNabavke),
-	foreign key (idDobavljaca) references dobavljaci(idDobavljaca)
+	foreign key (idDobavljaca) references dobavljaci(idDobavljaca),
+    foreign key (odobrio) references zaposleni(idZaposlenog)
 );
 
 create table stavkeNabavkeMasina (
@@ -180,6 +182,10 @@ create view cenaNabavkeMaterijala(idNabavke, potrosenNovac, valuta) as
 		on nm.idNabavke = snm.idNabavke
 group by nm.idNabavke, snm.valuta;
 
+create view brojMasina(tipMasine, brojMasina) as 
+	select naziv, count(naziv)
+	from masine 
+	group by naziv;
 
 delimiter $$
 create procedure validDecimal (val decimal, nonnegative bool)
@@ -227,6 +233,9 @@ begin
     ) then
 		signal sqlstate '45000' set message_text = "Direktor jedini ima pravo da odobri nabavku";
     end if;
+    if (new.datumIsporuke is null xor new.odobrio is null) then
+		signal sqlstate '45000' set message_text = "Datum isporuke ne moze biti unet bez odobrenja i obrnuto.";
+    end if;
 end
 $$
 
@@ -248,6 +257,9 @@ begin
 			p.naziv like 'direktor'
     ) then
 		signal sqlstate '45000' set message_text = "Direktor jedini ima pravo da odobri nabavku";
+    end if;
+    if (new.datumIsporuke is null xor new.odobrio is null) then
+		signal sqlstate '45000' set message_text = "Datum isporuke ne moze biti unet bez odobrenja i obrnuto.";
     end if;
 end
 $$
@@ -278,6 +290,22 @@ begin
 	if new.datumIsporuke is not null and new.datumIsporuke < new.datumPrijave then
 		signal sqlstate '45000' set message_text = "Datum isporuke mora biti nakon datuma prijave nabavke";
 	end if;
+    if new.odobrio is not null
+    and new.odobrio not in (
+		select z.idZaposlenog
+        from zaposleni z
+        join pozicije p
+			on z.idZaposlenog=p.idZaposlenog
+		join ovlascenja o
+			on p.idOvlascenja=o.idOvlascenja
+		where
+			p.naziv like 'direktor'
+    ) then
+		signal sqlstate '45000' set message_text = "Direktor jedini ima pravo da odobri nabavku";
+    end if;
+    if (new.datumIsporuke is null xor new.odobrio is null) then
+		signal sqlstate '45000' set message_text = "Datum isporuke ne moze biti unet bez odobrenja i obrnuto.";
+    end if;
 end
 $$
 
@@ -287,6 +315,22 @@ begin
 	if new.datumIsporuke is not null and new.datumIsporuke < new.datumPrijave then
 		signal sqlstate '45000' set message_text = "Datum isporuke mora biti nakon datuma prijave nabavke";
 	end if;
+    if new.odobrio is not null
+    and new.odobrio not in (
+		select z.idZaposlenog
+        from zaposleni z
+        join pozicije p
+			on z.idZaposlenog=p.idZaposlenog
+		join ovlascenja o
+			on p.idOvlascenja=o.idOvlascenja
+		where
+			p.naziv like 'direktor'
+    ) then
+		signal sqlstate '45000' set message_text = "Direktor jedini ima pravo da odobri nabavku";
+    end if;
+    if (new.datumIsporuke is null xor new.odobrio is null) then
+		signal sqlstate '45000' set message_text = "Datum isporuke ne moze biti unet bez odobrenja i obrnuto.";
+    end if;
 end
 $$
 
