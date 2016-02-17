@@ -1,0 +1,30 @@
+1000; 50; 'Za prodaju'; 'Oglasen'; 'Prezentovan'
+1001; 100; 'Za prodaju'; 'Oglasen'; 'Prezentovan'
+1002; 63; 'Za prodaju'; 'Neoglasen'; 
+1003; 40; 'Za prodaju'; 'Oglasen'; 'Prezentovan'
+1004; 59; 'Za prodaju'; 'Neoglasen';
+1005; 71; 'Za prodaju'; 'Oglasen'; 
+1006; 105; 'Za prodaju'; 'Oglasen'; 'Prezentovan'
+1007; 120; 'Za prodaju'; 'Neoglasen'; 'Prezentovan'
+1008; 80; 'Za prodaju'; 'Neoglasen'; 
+1009; 75; 'Za prodaju'; 'Neoglasen';'Prezentovan'
+1010; 57; Nespreman'; 'Oglasen'; 
+1011; 100; Nespreman'; 'Neoglasen'; 
+1012; 60; Nespreman'; 'Oglasen'; 
+1013; 42; Nespreman'; 'Neoglasen'; 
+1014; 52; Nespreman'; 'Oglasen'; 
+1015; 70; Nespreman'; 'Neoglasen'; 
+1016; 105; Nespreman'; 'Oglasen'; 
+1017; 120; Nespreman'; 'Oglasen'; 
+1018; 85; Nespreman'; 'Neoglasen'; 
+1019; 90; Nespreman'; 'Neoglasen'; 
+1020; 55; Nespreman'; 'Oglasen'; 
+1021; 160; Nespreman'; 'Neoglasen'; 
+1022; 60; Nespreman'; 'Neoglasen'; 
+1023; 40; Nespreman'; 'Neoglasen'; 
+1024; 50; Nespreman'; 'Oglasen'; 
+1025; 72; Nespreman'; 'Neoglasen'; 
+1026; 105; Nespreman'; 'Neoglasen'; 
+1027; 120; Nespreman'; 'Oglasen'; 
+1028; 80; Nespreman'; 'Neoglasen'; 
+1029; 90; Nespreman'; 'Neoglasen'; 
