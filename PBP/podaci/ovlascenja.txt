@@ -1,5 +1,9 @@
 10;Direktor
 11;Ekonomista
-12;Gredjevinski inženjer
+12;Inženjer
 13;Arhitekta
 14;Prodavac
+15;Šef tima
+16;Šef gradilišta
+17;Magacioner
+18;Kontrolor
