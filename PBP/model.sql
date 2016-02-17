@@ -78,6 +78,18 @@ create table pozicije (
     foreign key(idOvlascenja) references ovlascenja(idOvlascenja)
 );
 
+
+create table projekti (
+	idProjekta int not null auto_increment,
+	datumPocetka date not null,
+	rok date not null,
+	datumZavrsetka date default null,
+    arhitekta int default null,
+    inzenjer int default null,
+    odobrio int default null,
+	primary key (idProjekta)
+);
+
 create table gradjevinskiObjekti (
 	idObjekta int not null auto_increment,
 	velicina smallint not null,
@@ -148,13 +160,7 @@ create table podizvodjaci (
 	primary key (idPodizvodjaca)
 );
 
-create table projekti (
-	idProjekta int not null auto_increment,
-	datumPocetka date not null,
-	rok date not null,
-	datumZavrsetka date default null,
-	primary key (idProjekta)
-);
+
 
 create table ugovoriSaPodizvodjacima (
 	idUgovora int not null auto_increment,
@@ -373,6 +379,52 @@ begin
 			p.naziv like 'prodavac'
     ) then
 		signal sqlstate '45000' set message_text = "Prodavac jedini ima pravo da prodaje objekte.";
+    end if;
+end
+$$
+
+create trigger projekti_bu before update on projekti
+for each row
+begin
+	if new.arhitekta is null and new.inzenjer is not null then
+		signal sqlstate '45000' set message_text = "Inzenjer moze da odobri projekat jedino nakon arhitekte.";
+    end if;
+    if new.odobrio is not null and new.inzenjer is null then
+		signal sqlstate '45000' set message_text = "Direktor moze da odobri projekat jedino nakon inzenjera.";
+	end if;
+    if (new.arhitekta is not null and new.arhitekta not in (
+		select z.idZaposlenog
+        from zaposleni z
+        join pozicije p
+			on z.idZaposlenog=p.idZaposlenog
+		join ovlascenja o
+			on p.idOvlascenja=o.idOvlascenja
+		where
+			p.naziv like 'arhitekta'
+    ) ) or (
+		new.inzenjer is not null and new.inzenjer not in (
+		select z.idZaposlenog
+        from zaposleni z
+        join pozicije p
+			on z.idZaposlenog=p.idZaposlenog
+		join ovlascenja o
+			on p.idOvlascenja=o.idOvlascenja
+		where
+			p.naziv like 'inzenjer'
+    )
+    )or (
+		new.odobrio is not null and new.odobrio not in (
+		select z.idZaposlenog
+        from zaposleni z
+        join pozicije p
+			on z.idZaposlenog=p.idZaposlenog
+		join ovlascenja o
+			on p.idOvlascenja=o.idOvlascenja
+		where
+			p.naziv like 'direktor'
+    )
+    ) then
+		signal sqlstate '45000' set message_text = "Neophodno je da arhitekta, inzenjer ili direktor imaju svoja ovlascenja.";
     end if;
 end
 $$
