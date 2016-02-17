@@ -2,13 +2,41 @@ drop database if exists gradjevinskafirma;
 create database if not exists gradjevinskaFirma;
 use gradjevinskaFirma;
 
+<<<<<<< HEAD
+=======
+# Table dropping
+
+drop table if exists stavkeNabavkeMasina;
+drop table if exists nabavkeMasina;
+drop table if exists masine;
+drop table if exists skladiste;
+drop table if exists stavkeNabavkeMaterijala;
+drop table if exists nabavkeMaterijala;
+drop table if exists materijali;
+drop table if exists dobavljaci;
+drop table if exists projekti;
+drop table if exists ugovoriSaPodizvodjacima;
+drop table if exists podizvodjaci;
+drop table if exists radovi;
+drop table if exists prodaja;
+drop table if exists pozicije;
+drop table if exists zaposleni;
+drop table if exists gradjevinskiObjekti;
+
+>>>>>>> f73119957fbd09641d11fb1dde0ed87c273fdd69
 # Nabavka materijala
 
 create table zaposleni (
 	idZaposlenog int not null auto_increment,
 	ime varchar(255),
 	prezime varchar(255),
+<<<<<<< HEAD
 	primary key (idZaposlenog)
+=======
+	idPozicije int,
+	primary key (idZaposlenog),
+	foreign key (idPozicije) references pozicije(idPozicije)
+>>>>>>> f73119957fbd09641d11fb1dde0ed87c273fdd69
 );
 
 create table materijali (
@@ -63,6 +91,7 @@ create table stavkeNabavkeMaterijala (
 
 # Zaposleni
 
+<<<<<<< HEAD
 
 
 create table ovlascenja (
@@ -80,6 +109,16 @@ create table pozicije (
 
 create table gradjevinskiObjekti (
 	idObjekta int not null auto_increment,
+=======
+create table pozicije (
+	idPozicije int not null auto_increment,
+	pozicija varchar(255),
+	foreign key (idZaposlenog) references zaposleni(idZaposlenog)
+);
+
+create table gradjevinskiObjekti (
+	idObjekta int(11) not null auto_increment,
+>>>>>>> f73119957fbd09641d11fb1dde0ed87c273fdd69
 	velicina smallint not null,
 	stanjeProdaje enum('Za prodaju', 'Nespreman') default 'Nespreman',
 	stanjeOglasavanja enum('Oglasen', 'Neoglasen') default 'Neoglasen',
@@ -144,6 +183,7 @@ create table podizvodjaci (
 	idPodizvodjaca int not null auto_increment,
 	naziv varchar(255) not null,
 	primary key (idPodizvodjaca)
+<<<<<<< HEAD
 );
 
 create table projekti (
@@ -152,6 +192,8 @@ create table projekti (
 	rok date not null,
 	datumZavrsetka date default null,
 	primary key (idProjekta)
+=======
+>>>>>>> f73119957fbd09641d11fb1dde0ed87c273fdd69
 );
 
 create table ugovoriSaPodizvodjacima (
@@ -165,6 +207,7 @@ create table ugovoriSaPodizvodjacima (
 	foreign key (idProjekta) references projekti(idProjekta)
 );
 
+<<<<<<< HEAD
 
 
 
@@ -232,3 +275,12 @@ begin
     end if;
 end
 $$
+=======
+create table projekti (
+	idProjekta int not null auto_increment,
+	datumPocetka date not null,
+	rok date not null,
+	datumZavrsetka date default null,
+	primary key (idProjekta)
+);
+>>>>>>> f73119957fbd09641d11fb1dde0ed87c273fdd69

@@ -1,0 +1,25 @@
+100;Stolarski radovi;Stolarski radovi
+101;Hidro i termoizolaterski radovi;Hidro i termoizolaterski radovi
+102;Krovopokrivački radovi;Krovopokrivački radovi
+103;Zidarski radovi;Zidarski radovi
+104;Instalacije grejanja i provetravanja;Instalacije grejanja i provetravanja
+105;Vodovodno kanalizacioni radovi;Vodovodno kanalizacioni radovi
+106;Zemljani radovi;Zemljani radovi
+107;Video nadzor;Video nadzor
+108;Lifovska postrojenja;Lifovska postrojenja
+109;Elektro radovi;Elektro radovi
+110;Betonski radovi;Betonski radovi
+111;Podopolagački radovi;Podopolagački radovi
+112;Molersko-fabrički radovi;Molersko-fabrički radovi
+113;Bravarski radovi;Bravarski radovi
+114;Limarski radovi;Limarski radovi
+115;Armirački radovi;Armirački radovi
+116;Tesarski radovi;Tesarski radovi
+117;Horizontalna signalizacija;Horizontalna signalizacija
+118;Vertikalna signalizacija;Vertikalna signalizacija
+119;Semafori;Semafori
+120;Traširanje;Traširanje
+121;Izrada i montaža šina i pragova;Izrada i montaža šina i pragova
+121;Spremanje asfalta u pogonu i ugradnja;Spremanje asfalta u pogonu i ugradnja
+122;Proizvodnja energije;Proizvodnja energije
+123;Kontrola nivoa i protoka vode;Kontrola nivoa i protoka vode
