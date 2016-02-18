@@ -2,11 +2,16 @@ drop	database if		exists	gradjevinskafirma;
 create	database if not exists	gradjevinskaFirma;
 use								gradjevinskaFirma;
 
+-- kreiranje tabela
+
 create table zaposleni
     (
         idZaposlenog int not null auto_increment
-      , ime          varchar(255)
-      , prezime      varchar(255)
+      , ime           varchar(255) not null
+      , prezime       varchar(255) not null
+      , korisnickoIme varchar(255) not null unique
+      , salt		  char(16)	   not null
+      , lozinka		  char(32)	   not null
       , primary key (idZaposlenog)
     )
 ;
@@ -196,6 +201,8 @@ create table ugovoriSaPodizvodjacima
     )
 ;
 
+-- pogledi
+
 create view cenaNabavkeMasina
     (idNabavke, potrosenNovac, valuta
     ) as
@@ -234,6 +241,8 @@ create view brojMasina
     (tipMasine, brojMasina
     ) as
 select naziv, count(naziv) from masine group by naziv;
+
+-- okidaci
 
 delimiter $$
 create procedure
