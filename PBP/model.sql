@@ -125,7 +125,7 @@ create table prodaja
     (
         idProdaje    int			not null auto_increment
       , idProdavca   int			not null
-      , idObjekta    int			not null
+      , idObjekta    int			not null unique
       , imeKupca     varchar(255) 	not null
       , prezimeKupca varchar(255) 	not null
       , cena         decimal(10, 2) not null
@@ -242,6 +242,14 @@ create view brojMasina
     ) as
 select naziv, count(naziv) from masine group by naziv;
 
+create view ovlascenjaZaposlenih (idZaposlenog, idOvlascenja, nazivOvlascenja) as
+select z.idZaposlenog, o.idOvlascenja, o.nazivOvlascenja
+from zaposleni z
+	join pozicije p
+		on z.idZaposlenog=p.idZaposlenog
+	join ovlascenja o
+		on o.idOvlascenja=p.idOvlascenja;
+
 -- okidaci
 
 delimiter $$
@@ -288,17 +296,11 @@ if new.odobrio is not null
     and new.odobrio not in
     (
         select
-            z.idZaposlenog
+            idZaposlenog
         from
-            zaposleni z
-        join
-            pozicije p
-        on  z.idZaposlenog=p.idZaposlenog
-        join
-            ovlascenja o
-        on  p.idOvlascenja=o.idOvlascenja
-        where
-            p.naziv like 'direktor'
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'direktor'
     )
     then
     signal sqlstate '45000' set message_text = "Direktor jedini ima pravo da odobri nabavku";
@@ -320,17 +322,11 @@ if new.odobrio is not null
     and new.odobrio not in
     (
         select
-            z.idZaposlenog
+            idZaposlenog
         from
-            zaposleni z
-        join
-            pozicije p
-        on  z.idZaposlenog=p.idZaposlenog
-        join
-            ovlascenja o
-        on  p.idOvlascenja=o.idOvlascenja
-        where
-            p.naziv like 'direktor' ) then
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'direktor' ) then
     signal sqlstate '45000' set message_text = "Direktor jedini ima pravo da odobri nabavku";
 end if;
 if (new.datumIsporuke is null xor new.odobrio is null) then
@@ -359,8 +355,10 @@ end
 $$
 create trigger nabavkeMasina_bi before
     insert
-    on nabavkeMasina for each row begin if new.datumIsporuke is not null
-        and new.datumIsporuke                                          < new.datumPrijave then signal sqlstate '45000' set message_text = "Datum isporuke mora biti nakon datuma prijave nabavke"
+    on nabavkeMasina for each row
+begin
+	if new.datumIsporuke is not null
+        and new.datumIsporuke < new.datumPrijave then signal sqlstate '45000' set message_text = "Datum isporuke mora biti nakon datuma prijave nabavke"
     ;
 
 end if;
@@ -368,22 +366,16 @@ if new.odobrio is not null
     and new.odobrio not in
     (
         select
-            z.idZaposlenog
+            idZaposlenog
         from
-            zaposleni z
-        join
-            pozicije p
-        on  z.idZaposlenog=p.idZaposlenog
-        join
-            ovlascenja o
-        on  p.idOvlascenja=o.idOvlascenja
-        where
-            p.naziv like 'direktor'
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'direktor'
     )
     then
     signal sqlstate '45000' set message_text = "Direktor jedini ima pravo da odobri nabavku";
 end if;
-if (new.datumIsporuke is null xor new.odobrio is null) then
+if (new.datumIsporuke is not null and new.odobrio is null) then
     signal sqlstate '45000' set message_text = "Datum isporuke ne moze biti unet bez odobrenja i obrnuto.";
 end if;
 end
@@ -396,24 +388,18 @@ create trigger nabavkeMasina_bu before
     ;
 
 end if;
-if new.odobrio is not null
+if( new.odobrio is not null
     and new.odobrio not in
     (
         select
-            z.idZaposlenog
+            idZaposlenog
         from
-            zaposleni z
-        join
-            pozicije p
-        on  z.idZaposlenog=p.idZaposlenog
-        join
-            ovlascenja o
-        on  p.idOvlascenja=o.idOvlascenja
-        where
-            p.naziv like 'direktor' ) then
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'direktor' ) ) then
     signal sqlstate '45000' set message_text = "Direktor jedini ima pravo da odobri nabavku";
 end if;
-if (new.datumIsporuke is null xor new.odobrio is null) then
+if (new.datumIsporuke is not null and new.odobrio is null) then
     signal sqlstate '45000' set message_text = "Datum isporuke ne moze biti unet bez odobrenja i obrnuto.";
 end if;
 end
@@ -423,17 +409,11 @@ create trigger prodaja_bi before
     on prodaja for each row begin if new.idProdavca not in
         (
             select
-                z.idZaposlenog
-            from
-                zaposleni z
-            join
-                pozicije p
-            on  z.idZaposlenog=p.idZaposlenog
-            join
-                ovlascenja o
-            on  p.idOvlascenja=o.idOvlascenja
-            where
-                p.naziv like 'prodavac'
+            idZaposlenog
+        from
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'prodavac'
         )
         then signal sqlstate '45000' set message_text = "Prodavac jedini ima pravo da prodaje objekte."
     ;
@@ -458,17 +438,11 @@ create trigger prodaja_bu before
     on prodaja for each row begin if new.idProdavca not in
         (
             select
-                z.idZaposlenog
-            from
-                zaposleni z
-            join
-                pozicije p
-            on  z.idZaposlenog=p.idZaposlenog
-            join
-                ovlascenja o
-            on  p.idOvlascenja=o.idOvlascenja
-            where
-                p.naziv like 'prodavac' ) then signal sqlstate '45000'
+            idZaposlenog
+        from
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'prodavac' ) then signal sqlstate '45000'
     set message_text = "Prodavac jedini ima pravo da prodaje objekte."
     ;
 
@@ -488,49 +462,31 @@ end if;
 if (new.arhitekta is not null and new.arhitekta not in
     (
         select
-            z.idZaposlenog
+            idZaposlenog
         from
-            zaposleni z
-        join
-            pozicije p
-        on  z.idZaposlenog=p.idZaposlenog
-        join
-            ovlascenja o
-        on  p.idOvlascenja=o.idOvlascenja
-        where
-            p.naziv like 'arhitekta' ) ) or
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'arhitekta' ) ) or
     (
         new.inzenjer is not null and new.inzenjer not in
         (
             select
-                z.idZaposlenog
-            from
-                zaposleni z
-            join
-                pozicije p
-            on  z.idZaposlenog=p.idZaposlenog
-            join
-                ovlascenja o
-            on  p.idOvlascenja=o.idOvlascenja
-            where
-                p.naziv like 'inzenjer' )
+            idZaposlenog
+        from
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'inzenjer' )
     )
     or
     (
         new.odobrio is not null and new.odobrio not in
         (
             select
-                z.idZaposlenog
-            from
-                zaposleni z
-            join
-                pozicije p
-            on  z.idZaposlenog=p.idZaposlenog
-            join
-                ovlascenja o
-            on  p.idOvlascenja=o.idOvlascenja
-            where
-                p.naziv like 'direktor' )
+            idZaposlenog
+        from
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'direktor' )
     )
     then
     signal sqlstate '45000' set message_text = "Neophodno je da arhitekta, inzenjer ili direktor imaju svoja ovlascenja.";
@@ -551,49 +507,31 @@ end if;
 if (new.arhitekta is not null and new.arhitekta not in
     (
         select
-            z.idZaposlenog
+            idZaposlenog
         from
-            zaposleni z
-        join
-            pozicije p
-        on  z.idZaposlenog=p.idZaposlenog
-        join
-            ovlascenja o
-        on  p.idOvlascenja=o.idOvlascenja
-        where
-            p.naziv like 'arhitekta' ) ) or
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'arhitekta' ) ) or
     (
         new.inzenjer is not null and new.inzenjer not in
         (
             select
-                z.idZaposlenog
-            from
-                zaposleni z
-            join
-                pozicije p
-            on  z.idZaposlenog=p.idZaposlenog
-            join
-                ovlascenja o
-            on  p.idOvlascenja=o.idOvlascenja
-            where
-                p.naziv like 'inzenjer' )
+            idZaposlenog
+        from
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'inzenjer' )
     )
     or
     (
         new.odobrio is not null and new.odobrio not in
         (
             select
-                z.idZaposlenog
-            from
-                zaposleni z
-            join
-                pozicije p
-            on  z.idZaposlenog=p.idZaposlenog
-            join
-                ovlascenja o
-            on  p.idOvlascenja=o.idOvlascenja
-            where
-                p.naziv like 'direktor' )
+            idZaposlenog
+        from
+            ovlascenjaZaposlenih
+        where    
+            nazivOvlascenja like 'direktor' )
     )
     then
     signal sqlstate '45000' set message_text = "Neophodno je da arhitekta, inzenjer ili direktor imaju svoja ovlascenja.";
