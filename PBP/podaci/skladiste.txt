@@ -1,7 +1,9 @@
-32;100,85;II;20,8;EUR
-33;105,85;I;40,8;EUR
-34;100,85;II;20,8;EUR
-35;22,85;II;100,8;EUR
-36;100,85;III;80,8;EUR
-37;150,85;II;4000,8;RSD
-38;200,85;IV;60,8;EUR
+insert into skladiste(idMaterijala, kolicina, kvalitet, nabavnaCena, valuta)
+values
+(32,100,85,II,20,8,EUR),
+(33,105,85,I,40,8,EUR),
+(34,100,85,II,20,8,EUR),
+(35,22,85,II,100,8,EUR),
+(36,100,85,III,80,8,EUR),
+(37,150,85,II,4000,8,RSD),
+(38,200,85,IV,60,8,EUR);

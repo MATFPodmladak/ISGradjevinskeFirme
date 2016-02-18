@@ -1,6 +1,8 @@
-8477;500;25;true;false
-8478;500;35;true;true
-8479;501;75;false;false
-8480;503;25;true;true
-8481;504;85;true;true
-8482;502;45;true;true
+insert into gradjevinskiObjekat(idObjekta, idProjekta, velicina, spremanZaProdaju, oglasen)
+values
+(8477,500,25,true,false),
+(8478,500,35,true,true),
+(8479,501,75,false,false),
+(8480,503,25,true,true),
+(8481,504,85,true,true),
+(8482,502,45,true,true);
