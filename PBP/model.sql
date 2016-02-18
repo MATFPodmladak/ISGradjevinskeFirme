@@ -11,67 +11,6 @@ create table zaposleni
     )
 ;
 
-create table materijali
-    (
-        idMaterijala int not null auto_increment
-      , naziv        varchar(255) not null
-      , opis text
-      , jedinica enum ('kg', 'm', 'm2', 'm3')
-      , primary key (idMaterijala)
-    )
-;
-
-create table skladiste
-    (
-        idMaterijala int not null
-      , kolicina     decimal(10, 2) not null
-      , kvalitet enum('I', 'II', 'III', 'IV')
-      , nabavnaCena decimal(10, 2)
-      , valuta enum('RSD', 'USD', 'EUR')
-      , primary key (idMaterijala, kvalitet, nabavnaCena)
-      , foreign key (idMaterijala) references materijali(idMaterijala)
-    )
-;
-
-create table dobavljaci
-    (
-        idDobavljaca int not null auto_increment
-      , ime          varchar(255) not null
-      , adresa       varchar(255) not null
-      , telefon      varchar(255) not null
-      , primary key (idDobavljaca)
-    )
-;
-
-create table nabavkeMaterijala
-    (
-        idNabavke     int not null auto_increment
-      , idDobavljaca  int
-      , datumPrijave  date
-      , datumIsporuke date default null
-      , odobrio       int default null
-      , primary key (idNabavke)
-      , foreign key (idDobavljaca) references dobavljaci(idDobavljaca)
-      , foreign key (odobrio) references zaposleni(idZaposlenog)
-    )
-;
-
-create table stavkeNabavkeMaterijala
-    (
-        idStavkeNabavke int not null auto_increment
-      , idNabavke       int not null
-      , idMaterijala    int not null
-      , kolicina        decimal(10, 2)
-      , cena            decimal(10, 2)
-      , valuta enum('RSD', 'USD', 'EUR')
-      , kvalitet enum('I', 'II', 'III', 'IV')
-      , primary key (idStavkeNabavke, idNabavke)
-      , foreign key (idNabavke) references nabavkeMaterijala(idNabavke)
-      , foreign key (idMaterijala) references materijali(idMaterijala)
-    )
-;
-
-# Zaposleni
 create table ovlascenja
     (
         idOvlascenja    int not null auto_increment
@@ -104,35 +43,98 @@ create table projekti
 
 create table gradjevinskiObjekti
     (
-        idObjekta int not null auto_increment
-      , velicina  smallint not null
-      , spremanZaProdaju bool default false not null
-      , oglasen bool default false not null
-      , spremanZaPrezentovanje bool default false not null
+        idObjekta				int		 not null auto_increment
+      , idProjekta				int		 not null 
+      , velicina 				smallint not null
+      , spremanZaProdaju		bool	 not null default false
+      , oglasen					bool	 not null default false
+      , spremanZaPrezentovanje	bool	 not null default false
       , primary key (idObjekta)
+      , foreign key (idProjekta) references projekti (idProjekta)
     )
 ;
 
+create table dobavljaci
+    (
+        idDobavljaca int not null auto_increment
+      , ime          varchar(255) not null
+      , adresa       varchar(255) not null
+      , telefon      varchar(255) not null
+      , primary key (idDobavljaca)
+    )
+;
+
+create table materijali
+    (
+        idMaterijala	int not null auto_increment
+      , naziv       	varchar(255) not null
+      , opis			text
+      , jedinica		enum ('kg', 'm', 'm2', 'm3')
+      , primary key (idMaterijala)
+    )
+;
+
+create table skladiste
+    (
+        idMaterijala	int not null
+      , kolicina		decimal(10, 2) not null
+      , kvalitet 		enum('I', 'II', 'III', 'IV')
+      , nabavnaCena		decimal(10, 2)
+      , valuta			enum('RSD', 'USD', 'EUR')
+      , primary key (idMaterijala, kvalitet, nabavnaCena)
+      , foreign key (idMaterijala) references materijali(idMaterijala)
+    )
+;
+
+
+create table nabavkeMaterijala
+    (
+        idNabavke     int not null auto_increment
+      , idDobavljaca  int
+      , datumPrijave  date
+      , datumIsporuke date default null
+      , odobrio       int default null
+      , primary key (idNabavke)
+      , foreign key (idDobavljaca) references dobavljaci(idDobavljaca)
+      , foreign key (odobrio) references zaposleni(idZaposlenog)
+    )
+;
+
+create table stavkeNabavkeMaterijala
+    (
+        idStavkeNabavke int not null auto_increment
+      , idNabavke       int not null
+      , idMaterijala    int not null
+      , kolicina        decimal(10, 2)
+      , cena            decimal(10, 2)
+      , valuta			enum('RSD', 'USD', 'EUR')
+      , kvalitet 		enum('I', 'II', 'III', 'IV')
+      , primary key (idStavkeNabavke, idNabavke)
+      , foreign key (idNabavke) references nabavkeMaterijala(idNabavke)
+      , foreign key (idMaterijala) references materijali(idMaterijala)
+    )
+;
+
+
 create table prodaja
     (
-        idProdaje    int not null auto_increment
-      , idProdavca   int not null
-      , idObjekta    int not null
-      , imeKupca     varchar(255) not null
-      , prezimeKupca varchar(255) not null
+        idProdaje    int			not null auto_increment
+      , idProdavca   int			not null
+      , idObjekta    int			not null
+      , imeKupca     varchar(255) 	not null
+      , prezimeKupca varchar(255) 	not null
       , cena         decimal(10, 2) not null
-      , valuta enum('RSD', 'USD', 'EUR')
-      , datumProdaje date
+      , valuta		 enum('RSD', 'USD', 'EUR')
+      , datumProdaje date default null
       , primary key (idProdaje)
       , foreign key (idProdavca) references zaposleni(idZaposlenog)
       , foreign key (idObjekta) references gradjevinskiObjekti(idObjekta)
     )
 ;
 
-# Nabavka masina
 create table masine
     (
-        idMasine int not null auto_increment
+        idMasine int		  not null auto_increment
       , naziv    varchar(255) not null
       , primary key (idMasine)
     )
@@ -140,10 +142,10 @@ create table masine
 
 create table nabavkeMasina
     (
-        idNabavke     int not null auto_increment
-      , idDobavljaca  int not null
-      , datumPrijave  date not null
-      , datumIsporuke date default null
+        idNabavke     int	not null auto_increment
+      , idDobavljaca  int	not null
+      , datumPrijave  date	not null
+      , datumIsporuke date	default null
       , odobrio       int not null
       , primary key (idNabavke)
       , foreign key (idDobavljaca) references dobavljaci(idDobavljaca)
@@ -164,20 +166,18 @@ create table stavkeNabavkeMasina
     )
 ;
 
-# Izvodjenje radova
 create table radovi
     (
-        idRada int not null auto_increment
+        idRada int			not null auto_increment
       , naziv  varchar(255) not null
       , opis text
       , primary key (idRada)
     )
 ;
 
-# Podizvodjaci
 create table podizvodjaci
     (
-        idPodizvodjaca int not null auto_increment
+        idPodizvodjaca int			not null auto_increment
       , naziv          varchar(255) not null
       , primary key (idPodizvodjaca)
     )
@@ -465,7 +465,70 @@ create trigger prodaja_bu before
 
 end if;
 end
+
+$$create trigger projekti_bi before
+    insert
+    on projekti for each row begin if new.arhitekta is null
+        and new.inzenjer                        is not null then signal sqlstate '45000' set message_text = "Inzenjer moze da odobri projekat jedino nakon arhitekte."
+    ;
+
+end if;
+if new.odobrio is not null and new.inzenjer is null then
+    signal sqlstate '45000' set message_text = "Direktor moze da odobri projekat jedino nakon inzenjera.";
+end if;
+if (new.arhitekta is not null and new.arhitekta not in
+    (
+        select
+            z.idZaposlenog
+        from
+            zaposleni z
+        join
+            pozicije p
+        on  z.idZaposlenog=p.idZaposlenog
+        join
+            ovlascenja o
+        on  p.idOvlascenja=o.idOvlascenja
+        where
+            p.naziv like 'arhitekta' ) ) or
+    (
+        new.inzenjer is not null and new.inzenjer not in
+        (
+            select
+                z.idZaposlenog
+            from
+                zaposleni z
+            join
+                pozicije p
+            on  z.idZaposlenog=p.idZaposlenog
+            join
+                ovlascenja o
+            on  p.idOvlascenja=o.idOvlascenja
+            where
+                p.naziv like 'inzenjer' )
+    )
+    or
+    (
+        new.odobrio is not null and new.odobrio not in
+        (
+            select
+                z.idZaposlenog
+            from
+                zaposleni z
+            join
+                pozicije p
+            on  z.idZaposlenog=p.idZaposlenog
+            join
+                ovlascenja o
+            on  p.idOvlascenja=o.idOvlascenja
+            where
+                p.naziv like 'direktor' )
+    )
+    then
+    signal sqlstate '45000' set message_text = "Neophodno je da arhitekta, inzenjer ili direktor imaju svoja ovlascenja.";
+end if;
+end
 $$
+
 create trigger projekti_bu before
     update
     on projekti for each row begin if new.arhitekta is null
