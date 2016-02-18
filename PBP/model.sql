@@ -49,7 +49,7 @@ create table projekti
 create table gradjevinskiObjekti
     (
         idObjekta				int		 not null auto_increment
-      , idProjekta				int		 not null 
+      , idProjekta				int		 not null
       , velicina 				smallint not null
       , spremanZaProdaju		bool	 not null default false
       , oglasen					bool	 not null default false
